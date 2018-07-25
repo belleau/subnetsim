@@ -50,4 +50,5 @@ subnetwork <- function(network, globalNetwork, nbIter = 10000, nbNodes,
         stop("'seedV' must be an integer")
     }
 
+    set.seed(fixSeed(vSeed))
 }

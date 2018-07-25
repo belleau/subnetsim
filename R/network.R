@@ -1,8 +1,5 @@
 library(hash)
 
-h <- hash()
-h[["aye"]] <- 13
-h[["bla"]] <- 5
 
 IRGEN_all <- read.table("data/IRGEN_all.sif", header = FALSE, stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
 IRGEN_can <- read.table("data/IRGEN_Diabetes_candidats.sif", header = FALSE, stringsAsFactors = FALSE,fill = TRUE, na.strings = "")

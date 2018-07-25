@@ -1,6 +1,12 @@
 library(hash)
 
 
+createNetwork <- function(fileName){
+    netFile <- read.table(fileName, header = FALSE, stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
+
+}
+
+
 simuleSubNet <- function(netAll, nodesAll, nbIter, nbNodes, seedV){
     set.seed(seedV)
     pastSub <- hash()

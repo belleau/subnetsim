@@ -14,8 +14,8 @@ simuleSubNet(netAll, nodesAll, nbIter, nbNodes, seedV)
 \item{nbIter}{a \code{integer} indicating the number of iterations to be
 run.}
 
-\item{nbNodes}{a \code indicating the number of nodes that each simulated
-sub-network will contain.}
+\item{nbNodes}{a \code{integer} indicating the number of nodes that each
+simulated sub-network will contain.}
 
 \item{seedV}{a \code{integer}, a seed used when reproducible results are
 needed. When a value inferior or equal to zero is given, a random integer

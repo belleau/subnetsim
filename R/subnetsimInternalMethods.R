@@ -36,8 +36,8 @@ fixSeed <- function(vSeed) {
 #' @param nodesAll TODO
 #' @param nbIter a \code{integer} indicating the number of iterations to be
 #' run.
-#' @param nbNodes a \code indicating the number of nodes that each simulated
-#' sub-network will contain.
+#' @param nbNodes a \code{integer} indicating the number of nodes that each
+#' simulated sub-network will contain.
 #' @param seedV a \code{integer}, a seed used when reproducible results are
 #' needed. When a value inferior or equal to zero is given, a random integer
 #' is used.

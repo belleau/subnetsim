@@ -1,4 +1,4 @@
 library(testthat)
 library(subnetsim)
 
-test_package("subnetsim")
+test_check("subnetsim")

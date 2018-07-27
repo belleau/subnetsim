@@ -21,7 +21,6 @@
 #'
 #' @author Pascal Belleau
 #' @keywords subnetwork
-#' @seealso
 #' @export
 #' @examples
 #' ## TODO

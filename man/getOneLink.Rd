@@ -2,24 +2,29 @@
 % Please edit documentation in R/subnetsimInternalMethods.R
 \name{getOneLink}
 \alias{getOneLink}
-\title{Counting the number of nodes and the number of links in a
-network.}
+\title{Counting the number of nodes and the number of links associated to a
+sub-network.}
 \usage{
 getOneLink(netAll, nodesSel)
 }
 \arguments{
-\item{netAll}{TODO}
+\item{netAll}{a \code{hash} representing the global network.}
 
-\item{nodesSel}{TODO}
+\item{nodesSel}{a \code{vector} of \code{caracter} representing all the
+nodes contained in the sub-network.}
 }
 \value{
-a \code{vector} containing 2 \code{integer}. The first \code{integer}
-represent the number of nodes and the second \code{integer} represents the
-number of links.
+a \code{vector} containing 2 \code{integer}. The first
+\code{integer} represent the number of nodes and the second \code{integer}
+represents the number of links associated to a sub-network.
 }
 \description{
 Counting the number of nodes and the number of links in a
-network.
+sub-network. From a list of nodes forming the sub-network, the number of
+nodes and the number of links associated to the sub-network are calculated.
+The nodes and links inside the sub-network are counted as well as all nodes
+and links that are directly linked to the sub-network (on degree of
+distance).
 }
 \examples{
 

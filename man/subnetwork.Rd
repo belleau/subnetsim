@@ -16,7 +16,8 @@ run. Default: \code{10000}.}
 
 \item{nbNodes}{a \code{integer} TODO.}
 
-\item{seedV}{a \code{integer}, a seed used when reproducible results are
+\item{seedV}{a single \code{numeric}, interpreted as an \code{integer}, a
+seed used when reproducible results are
 needed. When a value inferior or equal to zero is given, a random integer
 is used. Default: \code{-1}.}
 }

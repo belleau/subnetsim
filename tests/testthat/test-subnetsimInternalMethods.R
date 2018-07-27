@@ -17,6 +17,8 @@ context("fixSeed() results")
 
 test_that("fixSeed(positive integer) must return the same integer", {
     expect_equal(fixSeed(3554), 3554)
+    expect_equal(fixSeed(4), 4)
+    expect_equal(fixSeed(324), 324)
 })
 
 

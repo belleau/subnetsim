@@ -4,9 +4,10 @@
 #'
 #' @param network a \code{vector} TODO
 #' @param globalNetwork an \code{array} or a \code{data.frame} TODO
-#' @param nbIter a \code{integer} indicating the number of iterations to be
-#' run. Default: \code{10000}.
-#' @param nbNodes a \code{integer} TODO.
+#' @param nbIter a single \code{numeric}, interpreted as an \code{integer}
+#' indicating the number of iterations to be run. Default: \code{10000}.
+#' @param nbNodes a single \code{numeric}, interpreted as an \code{integer}
+#' TODO.
 #' @param seedV a single \code{numeric}, interpreted as an \code{integer}, a
 #' seed used when reproducible results are
 #' needed. When a value inferior or equal to zero is given, a random integer
@@ -50,5 +51,7 @@ subnetwork <- function(network, globalNetwork, nbIter = 10000, nbNodes,
         stop("'seedV' must be an integer")
     }
 
+    nbIter <- as.integer(nbIter)
+    nbNodes <- as.integer(nbNodes)
     set.seed(fixSeed(seedV))
 }

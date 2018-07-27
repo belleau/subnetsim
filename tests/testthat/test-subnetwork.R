@@ -28,5 +28,21 @@ test_that("subnetwork() must return error when seedV not integer", {
                              nbNodes = 10, seedV = NA), error_message)
     expect_error( subnetwork(network = IRGEN_netAll,
                              globalNetwork = IRGEN_netAll, nbIter = 3,
-                             nbNodes = 10, seedV = 3.3), error_message)
+                             nbNodes = 10, seedV = "3.3"), error_message)
+})
+
+test_that("subnetwork() must return error when nbNodes not positive integer", {
+    error_message <- "'nbNodes' must be a positive integer"
+    expect_error( subnetwork(network = IRGEN_netAll,
+                             globalNetwork = IRGEN_netAll, nbIter = 3,
+                             nbNodes = 0, seedV = 33), error_message)
+    expect_error( subnetwork(network = IRGEN_netAll,
+                             globalNetwork = IRGEN_netAll, nbIter = 3,
+                             nbNodes = -1, seedV = 32), error_message)
+    expect_error( subnetwork(network = IRGEN_netAll,
+                             globalNetwork = IRGEN_netAll, nbIter = 3,
+                             nbNodes = "ALLO", seedV = 333), error_message)
+    expect_error( subnetwork(network = IRGEN_netAll,
+                             globalNetwork = IRGEN_netAll, nbIter = 3,
+                             nbNodes = c(2, 3), seedV = 33), error_message)
 })

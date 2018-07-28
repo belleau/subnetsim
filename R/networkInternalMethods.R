@@ -19,7 +19,7 @@
 networkFromSif <- function(netFileName, subNetFileName = NULL) {
 
     netFile <- read.table(netFileName, header = FALSE,
-                        stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
+                        stringsAsFactors = FALSE, fill = TRUE, na.strings = "")
 
     netAll <- hash()
     netLinks <- data.frame(n1 = rep(NA,
@@ -56,11 +56,11 @@ networkFromSif <- function(netFileName, subNetFileName = NULL) {
     if(!(is.null(subNetFileName))){
         subNet <- read.table(subNetFileName, header = FALSE,
                         stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
-        nodesAllSub <- unique(c(subNet[,1], subNet[!is.na(subNet[,3]),3]))
+        nodesAllSub <- unique(c(subNet[, 1], subNet[!is.na(subNet[,3]), 3]))
         nodesSubNet <- intersect(nodesAllSub, nodesAll)
 
         nodesSubNet <- nodesSubNet[order(nodesSubNet)]
-        if(length(nodesSubNet) != length(nodesAllSub)){
+        if(length(nodesSubNet) != length(nodesAllSub)) {
             warning("Subnetwork  not include in the network, keep only the intersection")
         }
     }

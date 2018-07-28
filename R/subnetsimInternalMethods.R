@@ -54,7 +54,7 @@ fixSeed <- function(vSeed) {
 #' @keywords internal
 simuleSubNet <- function(netAll, nodesAll, nbIter, nbNodes, seedV) {
 
-    set.seed(fixSeed(seedV))
+    #set.seed(fixSeed(seedV))
 
     pastSub <- hash()
 

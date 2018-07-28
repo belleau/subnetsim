@@ -14,7 +14,7 @@ network(netFileName, fileType = "sif", subNetFileName = NULL)
 \item{subNetFileName}{TODO}
 }
 \value{
-a \code{data.frame}
+a \code{object} marked as an network \code{class}.
 }
 \description{
 Generation of a network object.

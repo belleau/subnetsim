@@ -52,6 +52,7 @@ networkFromSif <- function(netFileName, subNetFileName=NULL){
     nodesSubNet <- NULL
 
     if(!(is.null(subNetFileName))){
+        subNet <- read.table(subNetFileName, header = FALSE, stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
         nodesAllSub <- unique(c(subNet[,1], subNet[!is.na(subNet[,3]),3]))
         nodesSubNet <- intersect(nodesAllSub, nodesAll)
 

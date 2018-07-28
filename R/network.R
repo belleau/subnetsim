@@ -16,7 +16,7 @@
 #'
 #' @importFrom hash hash has.key
 #' @author Pascal Belleau, Astrid Deschenes
-#' @keywords internal
+
 
 
 network <- function(netFileName, fileType="sif", subNetFileName=NULL){

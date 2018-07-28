@@ -27,4 +27,3 @@ Generation of a network object.
 \author{
 Pascal Belleau, Astrid Deschenes
 }
-\keyword{internal}

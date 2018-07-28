@@ -25,7 +25,7 @@ network <- function(netFileName, fileType="sif", subNetFileName=NULL){
     network <- NULL
     if(toupper(fileType) == "SIF"){
         if(file.exists(netFileName) &&
-           (subNetFileName = NULL ||
+           (is.null(subNetFileName) ||
             file.exists(subNetFileName))){
             network <- networkFromSif(netFileName, subNetFileName)
         }

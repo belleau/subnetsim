@@ -4,12 +4,10 @@
 \alias{subnetwork}
 \title{TODO}
 \usage{
-subnetwork(network, globalNetwork, nbIter = 10000, nbNodes, seedV = -1)
+subnetwork(network, nbIter = 10000, nbNodes = NULL, seedV = -1)
 }
 \arguments{
-\item{network}{a \code{vector} TODO}
-
-\item{globalNetwork}{an \code{array} or a \code{data.frame} TODO}
+\item{network}{an object \code{network} TODO}
 
 \item{nbIter}{a single \code{numeric}, interpreted as an \code{integer}
 indicating the number of iterations to be run. Default: \code{10000}.}

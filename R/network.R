@@ -28,6 +28,12 @@ network <- function(netFileName, fileType="sif", subNetFileName=NULL){
            (is.null(subNetFileName) ||
             file.exists(subNetFileName))){
             network <- networkFromSif(netFileName, subNetFileName)
+        }else{
+            strErr <- paste0("Problem with network filename ", netFileName)
+            if(!(is.null(subNetFileName))) {
+                strErr <- paste0(strErr, " or ", subNetFileName)
+            }
+            stop(strErr)
         }
     }
     class(network) <- "network"

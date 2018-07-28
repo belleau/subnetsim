@@ -2,8 +2,7 @@
 #'
 #' @description TODO
 #'
-#' @param network a \code{vector} TODO
-#' @param globalNetwork an \code{array} or a \code{data.frame} TODO
+#' @param network an object \code{network} TODO
 #' @param nbIter a single \code{numeric}, interpreted as an \code{integer}
 #' indicating the number of iterations to be run. Default: \code{10000}.
 #' @param nbNodes a single \code{numeric}, interpreted as an \code{integer}
@@ -28,7 +27,7 @@
 #' ## TODO
 #'
 #'
-subnetwork <- function(network, nbIter = 10000, nbNodes,
+subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
                         seedV = -1) {
 
     ####################################################
@@ -41,6 +40,10 @@ subnetwork <- function(network, nbIter = 10000, nbNodes,
     }
 
     # nbNodes has to be a positive integer
+    if(is.null(nbNodes) &&
+       !(is.null(network$nodesSubNet))) {
+        nbNode <- length(network$nodesSubNet)
+    }
     if(!is.numeric(nbNodes) || length(nbNodes) != 1L || is.na(nbNodes) ||
             nbNodes <= 0) {
         stop("'nbNodes' must be a positive integer")

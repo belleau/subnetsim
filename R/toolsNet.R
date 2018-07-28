@@ -1,13 +1,18 @@
 library(hash)
 
 
-createNetwork <- function(fileName){
-    netFile <- read.table(fileName, header = FALSE, stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
+createNetwork <- function(netFileName, subNetFileName){
+    netFile <- read.table(netFileName, header = FALSE, stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
+    subNet <- read.table(subNetFileName, header = FALSE, stringsAsFactors = FALSE,fill = TRUE, na.strings = "")
+    netAll <- hash()
+    netLinks <- data.frame(n1 = rep(NA, length(netFile[!(is.na(netFile[,3])),1])),
+                          n2 = rep(NA, length(netFile[!(is.na(netFile[,3])),1])))
+
 
     l <- 1
     for( i in seq_len(length(netFile[,1]))){
         if(!(is.na(netFile[i,3]))){
-            if(!(has.key(key = IRGEN_all[i,1], hash = netAll))){
+            if(!(has.key(key = netFile[i,1], hash = netAll))){
                 netAll[[netFile[i,1]]] <- hash()
             }
             netAll[[netFile[i,1]]][[netFile[i,3]]] <- l
@@ -15,14 +20,26 @@ createNetwork <- function(fileName){
             if(!(has.key(key = netFile[i,3], hash = netAll))){
                 netAll[[netFile[i,3]]] <- hash()
             }
-            netAll[[IRGEN_all[i,3]]][[netFile[i,1]]] <- l
-            netLink[l,1] <- netFile[i,1]
-            netLink[l,2] <- netFile[i,3]
+            netAll[[netFile[i,3]]][[netFile[i,1]]] <- l
+
             l <- l+1
         }
 
     }
 
+
+    nodesAll <- keys(netAll)
+
+    nodesAll <- nodesAll[order(nodesAll)]
+
+    nodesAllSub <- unique(c(subNet[,1], subNet[!is.na(subNet[,3]),3]))
+    nodesSubNet <- intersect(nodesAllSub, nodesAll)
+
+    nodesSubNet <- nodesSubNet[order(nodesSubNet)]
+    if(length(nodesSubNet) != length(nodesAllSub)){
+        warning("Subnetwork  not include in the network, keep only the intersection")
+    }
+    network <- list(netAll=netAll, nodesAll=nodesAll, nodesSubNet=nodesSubNet)
 }
 
 
@@ -44,6 +61,7 @@ simuleSubNet <- function(netAll, nodesAll, nbIter, nbNodes, seedV){
             distSubNet[i, 3] <- getSubNet(netAll, nodesAll[nodesSub])
         }
     }
+
     return(distSubNet)
 }
 
@@ -55,6 +73,10 @@ getOneLink <- function(netAll, nodesSel){
     cptLink <- 0
     for(i in seq_len(length(nodesSel))){
         listNodLink <- keys(netAll[[ nodesSel[i] ]])
+        if(!(has.key( nodesSel[i], nodesFirst))){
+            nodesFirst[[nodesSel[i]]] <- 1
+            cptNodes <- cptNodes + 1
+        }
         for(j in seq_len(length(listNodLink))){
             if(!(has.key( listNodLink[j], nodesFirst))){
                 nodesFirst[[listNodLink[j]]] <- 1
@@ -161,6 +183,7 @@ gp1 <- ggplot(res, aes(x=nbNodes)) +
                aes(xintercept = nbNodes,
                    color="observed"), linetype="longdash",
                show.legend=TRUE)
+print(gp1)
 ggsave(paste0("data/nodesOneLink.pdf"), gp1, width=7,height=5)
 
 df <-data.frame(nbLinks=1070)
@@ -222,3 +245,8 @@ netAll <- hash()
 netLink <- data.frame(n1 = rep(NA, length(IRGEN_all[!(is.na(netFile[,3])),1])),
                       n2 = rep(NA, length(IRGEN_all[!(is.na(netFile[,3])),1])))
 
+bla <- createNetwork("data/IRGEN_all.sif", "data/IRGEN_Diabetes_candidats.sif")
+getOneLink(bla$netAll, bla$nodesSubNet)
+
+
+res <- simuleSubNet(bla$netAll, bla$nodesAll, 10000, 94,32)

@@ -28,7 +28,7 @@
 #' ## TODO
 #'
 #'
-subnetwork <- function(network, globalNetwork, nbIter = 10000, nbNodes,
+subnetwork <- function(network, nbIter = 10000, nbNodes,
                         seedV = -1) {
 
     ####################################################
@@ -54,4 +54,5 @@ subnetwork <- function(network, globalNetwork, nbIter = 10000, nbNodes,
     nbIter <- as.integer(nbIter)
     nbNodes <- as.integer(nbNodes)
     set.seed(fixSeed(seedV))
+    return(simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes))
 }

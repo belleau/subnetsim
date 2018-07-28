@@ -51,10 +51,10 @@ test_that("simuleSubNet() return predicted results when seed fixed", {
 context("getOneLink() results")
 
 test_that("getOneLink() return predicted results", {
-    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[1:9]), c(52, 61))
-    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[121:133]), c(73, 94))
-    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[155:203]), c(162, 313))
-    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[244:263]), c(78, 127))
+    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[1:9]), c(61, 61))
+    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[121:133]), c(80, 94))
+    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[155:203]), c(187, 313))
+    expect_equal(getOneLink(IRGEN_netAll, IRGEN_nodesAll[244:263]), c(88, 127))
 })
 
 

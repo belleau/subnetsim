@@ -113,7 +113,10 @@ getOneLink <- function(netAll, nodesSel) {
     for (i in seq_len(length(nodesSel))) {
 
         listNodLink <- keys(netAll[[ nodesSel[i] ]])
-
+        if(!(has.key( nodesSel[i], nodesFirst))){
+            nodesFirst[[nodesSel[i]]] <- 1
+            cptNodes <- cptNodes + 1
+        }
         for (j in seq_len(length(listNodLink))) {
 
             if (!(has.key( listNodLink[j], nodesFirst))) {

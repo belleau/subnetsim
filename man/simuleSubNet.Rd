@@ -7,7 +7,7 @@
 simuleSubNet(netAll, nodesAll, nbIter, nbNodes, seedV)
 }
 \arguments{
-\item{netAll}{TODO}
+\item{netAll}{a \code{hash} representing the global network.}
 
 \item{nodesAll}{TODO}
 
@@ -22,7 +22,8 @@ needed. When a value inferior or equal to zero is given, a random integer
 is used.}
 }
 \value{
-a \code{data.frame} containing all simulated sub-network.
+a \code{data.frame} containing all simulated sub-network. Each
+row of the \code{data.frame} corresponds to one simulation.
 }
 \description{
 Generationg multiple simulated sub-networks from a network. The

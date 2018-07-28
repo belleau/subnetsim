@@ -11,12 +11,14 @@ subnetwork(network, globalNetwork, nbIter = 10000, nbNodes, seedV = -1)
 
 \item{globalNetwork}{an \code{array} or a \code{data.frame} TODO}
 
-\item{nbIter}{a \code{integer} indicating the number of iterations to be
-run. Default: \code{10000}.}
+\item{nbIter}{a single \code{numeric}, interpreted as an \code{integer}
+indicating the number of iterations to be run. Default: \code{10000}.}
 
-\item{nbNodes}{a \code{integer} TODO.}
+\item{nbNodes}{a single \code{numeric}, interpreted as an \code{integer}
+TODO.}
 
-\item{seedV}{a \code{integer}, a seed used when reproducible results are
+\item{seedV}{a single \code{numeric}, interpreted as an \code{integer}, a
+seed used when reproducible results are
 needed. When a value inferior or equal to zero is given, a random integer
 is used. Default: \code{-1}.}
 }

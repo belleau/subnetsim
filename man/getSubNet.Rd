@@ -7,12 +7,13 @@
 getSubNet(netAll, nodesSel)
 }
 \arguments{
-\item{netAll}{TODO}
+\item{netAll}{a \code{hash} representing the global network.}
 
-\item{nodesSel}{TODO}
+\item{nodesSel}{a \code{vector} of \code{caracter} representing all the
+nodes contained in the sub-network.}
 }
 \value{
-a \code{integer} representing the number of lilnks.
+a \code{integer} representing the number of links.
 }
 \description{
 Counting the number of links in a network.

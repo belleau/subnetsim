@@ -16,6 +16,7 @@
 #'
 #' @importFrom hash hash has.key
 #' @author Pascal Belleau, Astrid Deschenes
+#' @export
 
 
 

@@ -42,7 +42,7 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
     # nbNodes has to be a positive integer
     if(is.null(nbNodes) &&
        !(is.null(network$nodesSubNet))) {
-        nbNode <- length(network$nodesSubNet)
+        nbNodes <- length(network$nodesSubNet)
     }
     if(!is.numeric(nbNodes) || length(nbNodes) != 1L || is.na(nbNodes) ||
             nbNodes <= 0) {
@@ -56,6 +56,6 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
 
     nbIter <- as.integer(nbIter)
     nbNodes <- as.integer(nbNodes)
-    set.seed(fixSeed(seedV))
+
     return(simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes))
 }

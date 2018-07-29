@@ -8,7 +8,7 @@
 #' @param subNetFileName TODO
 #'
 #'
-#' @return a \code{data.frame}
+#' @return a \code{object} marked as an network \code{class}.
 #'
 #' @examples
 #'
@@ -17,18 +17,15 @@
 #' @importFrom hash hash has.key
 #' @author Pascal Belleau, Astrid Deschenes
 #' @export
-
-
-
-network <- function(netFileName, fileType="sif", subNetFileName=NULL){
+network <- function(netFileName, fileType="sif", subNetFileName=NULL) {
 
     network <- NULL
-    if(toupper(fileType) == "SIF"){
+    if (toupper(fileType) == "SIF") {
         if(file.exists(netFileName) &&
            (is.null(subNetFileName) ||
-            file.exists(subNetFileName))){
+            file.exists(subNetFileName))) {
             network <- networkFromSif(netFileName, subNetFileName)
-        }else{
+        } else {
             strErr <- paste0("Problem with network filename ", netFileName)
             if(!(is.null(subNetFileName))) {
                 strErr <- paste0(strErr, " or ", subNetFileName)
@@ -38,6 +35,7 @@ network <- function(netFileName, fileType="sif", subNetFileName=NULL){
     } else {
         strErr <- paste0("File type ", FileType, " is not supported")
     }
+
     class(network) <- "network"
     return(network)
 }

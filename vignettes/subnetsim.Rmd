@@ -1,0 +1,75 @@
+---
+title: "TODO
+"
+author:  Pascal Belleau and Astrid Deschênes
+output:
+  html_document:
+    toc: true
+bibliography: biblio.bibtex
+vignette: >
+  %\VignetteIndexEntry{TODO}
+  %\VignettePackage{subnetsim}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r style, echo = FALSE, results = 'asis', warning=FALSE, message=FALSE}
+library(knitr)
+library(subnetsim)
+```
+
+<br />
+
+**Package**: `r packageDescription("subnetsim")[["Package"]]` <br />
+**Authors**: `r packageDescription("subnetsim")[["Author"]]` <br />
+**Version**: `r packageDescription("subnetsim")$Version` <br />
+**Compiled date**: `r Sys.Date()` <br />
+**License**: `r packageDescription("subnetsim")[["License"]]` <br />
+
+
+# Licensing 
+
+The `r packageDescription("subnetsim")[["Package"]]` package and the underlying 
+`r packageDescription("subnetsim")[["Package"]]` code 
+are distributed under the Artistic license 2.0. You are free to use and 
+redistribute this software.
+
+
+# Introduction
+
+TODO: Presentation du network, lien, noeuds
+
+A network model is a model that is designed to represent entities and their relationships in a system. 
+Networks are commonly used to study complex systems in many disciplines such as social science and systems biology [@Bader].
+
+# Loading subnetsim package
+
+As with any R package, the `r packageDescription("subnetsim")[["Package"]]` package should 
+first be loaded with the following command:
+
+```{r loadingPackage, warning=FALSE, message=FALSE}
+library(subnetsim)
+```
+
+
+# Description of the permutation analysis
+
+The permutation analysis is a statistical significance test in which 
+the distribution of the test statistic under the null hypothesis is obtained 
+by calculating the values of the test statistic under rearrangement of 
+the labels on the observed data points. The rearrangement of the labels is 
+done through repeated random sampling [@Legendre1998, pp. 142-157]. 
+
+
+# Session info
+
+Here is the output of sessionInfo() on the system on which this document 
+was compiled:
+
+```{r sessionInfo, echo=FALSE}
+sessionInfo()
+```
+
+
+# References
+

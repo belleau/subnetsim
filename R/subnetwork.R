@@ -14,13 +14,13 @@
 #'
 #'
 #' @return a list is returned for use by \code{print.subnetwork}. This list has
-#'            the components:
+#'            the following components:
 #'            \itemize{
 #'                \item{ TODO }
 #'                \item{ TODO }
 #'            }
 #'
-#' @author Pascal Belleau
+#' @author Pascal Belleau, Astrid Deschenes
 #' @keywords subnetwork
 #' @export
 #' @examples
@@ -57,5 +57,21 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
     nbIter <- as.integer(nbIter)
     nbNodes <- as.integer(nbNodes)
 
-    return(simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes, seedV))
+    analysis <- simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes)
+
+    # Return a list marked as an regression class containing :
+    # 1 - a dataframe of the number of links in the simulated subnetworks
+    #     extended to contained the surronding nodes (first degree nodes)
+    # 2 - a dataframe of the number of links in the simulated subnetworks
+    # 3 - a dataframe of the number of links in the simulated subnetworks
+    #     extended to contained the surronding nodes (first degree nodes)
+    # 4 - the number of iterations
+    # 5 - the number of nodes in the tested subnetwork
+    # 6 - the seed
+    out <- list(nbNodesOneLink = analysis$nbNodesOneLink,
+                    nbLinkOneLink = analysis$nbLinkOneLink,
+                    nbLink= analysis$nbLink,
+                    nbIter = nbIter, nbNodes = nbNodes, seed = seedV)
+    class(out) <- "subnetwork"
+    return(out)
 }

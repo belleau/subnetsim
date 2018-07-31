@@ -19,25 +19,25 @@ test_that("fixSeed(positive integer) must return the same integer", {
 ### Tests simuleSubNet() results
 
 context("simuleSubNet() results")
-
+#data.frame(nbNodesOneLink=distSubNet[, 1], nbLinkOneLink=distSubNet[, 2] , nbLink=distSubNet[, 3])
 test_that("simuleSubNet() return predicted results when seed fixed", {
     expect_equal(simuleSubNet(demo_netAll$netAll, demo_netAll$nodesAll, 4, 33, 145),
-                 data.frame(nbNodes=c(153, 166, 145, 157),
-                            nbLink=c(213, 257, 242, 205),
-                            nbLinkSub=c(13, 13, 16, 8)))
+                 data.frame(nbNodesOneLink=c(153, 166, 145, 157),
+                            nbLinkOneLink=c(213, 257, 242, 205),
+                            nbLink=c(13, 13, 16, 8)))
     expect_equal(simuleSubNet(demo_netAll$netAll, demo_netAll$nodesAll, as.integer(4),
                                 as.integer(12), 145),
-                 data.frame(nbNodes=c(80, 44, 62, 68),
-                            nbLink=c(98, 44, 56, 78),
-                            nbLinkSub=c(4, 0, 0, 3)))
+                 data.frame(nbNodesOneLink=c(80, 44, 62, 68),
+                            nbLinkOneLink=c(98, 44, 56, 78),
+                            nbLink=c(4, 0, 0, 3)))
     expect_equal(simuleSubNet(demo_netAll$netAll, demo_netAll$nodesAll, 3, 12, 333),
-                 data.frame(nbNodes=c(95, 76, 85),
-                            nbLink=c(102, 79, 89),
-                            nbLinkSub=c(1, 1, 1)))
+                 data.frame(nbNodesOneLink=c(95, 76, 85),
+                            nbLinkOneLink=c(102, 79, 89),
+                            nbLink=c(1, 1, 1)))
     expect_equal(simuleSubNet(demo_netAll$netAll, demo_netAll$nodesAll, 5, 22, 1111),
-                 data.frame(nbNodes=c(122, 130, 118, 97, 132),
-                            nbLink=c(177, 143, 166, 116, 179),
-                            nbLinkSub=c(7, 3, 5, 4, 7)))
+                 data.frame(nbNodesOneLink=c(122, 130, 118, 97, 132),
+                            nbLinkOneLink=c(177, 143, 166, 116, 179),
+                            nbLink=c(7, 3, 5, 4, 7)))
 })
 
 ### Tests getOneLink() results

@@ -57,7 +57,8 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
     nbIter <- as.integer(nbIter)
     nbNodes <- as.integer(nbNodes)
 
-    analysis <- simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes)
+    analysis <- simuleSubNet(network$netAll, network$nodesAll,
+                                nbIter, nbNodes, seedV)
 
     # Return a list marked as an regression class containing :
     # 1 - a dataframe of the number of links in the simulated subnetworks

@@ -57,5 +57,19 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
     nbIter <- as.integer(nbIter)
     nbNodes <- as.integer(nbNodes)
 
+    analysis <- simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes)
+
+    # Prepare data frame which contains a summary of each step
+    final <- data.frame(Iteration=1:length(values), Step=names(values),
+                        row.names = NULL)
+    final[criterion]<-values
+
+    # Return a list marked as an regression class containing :
+    # 1- a list containing the summary data frame
+    # 2- the final regression
+    out <- list(iterations=final, lm=regression,
+                    nbIter=nbIter, nbNodes=nbNodes)
+    class(out) <- "subnetwork"
+    return(out)
     return(simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes))
 }

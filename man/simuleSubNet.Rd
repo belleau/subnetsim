@@ -9,7 +9,7 @@ simuleSubNet(netAll, nodesAll, nbIter, nbNodes, seedV)
 \arguments{
 \item{netAll}{a \code{hash} representing the global network.}
 
-\item{nodesAll}{TODO}
+\item{nodesAll}{\code{list} of all the node in the network}
 
 \item{nbIter}{a \code{integer} indicating the number of iterations to be
 run.}
@@ -23,7 +23,15 @@ is used.}
 }
 \value{
 a \code{data.frame} containing all simulated sub-network. Each
-row of the \code{data.frame} corresponds to one simulation.
+row of the \code{data.frame} corresponds to one simulation.:
+\itemize{
+\item nbLink: Number of link starting from each node of the simulate subnetwork
+\item nbNodesOneLink: Number of node of the simulate subnetwork
+ plus the number of node connected with a node in the subnetwork
+\item nbLinkOneLink Number of link starting from each node of the simulate
+subnetwork plus the number of link starting from node connected with
+a node in the subnetwork
+}
 }
 \description{
 Generationg multiple simulated sub-networks from a network. The

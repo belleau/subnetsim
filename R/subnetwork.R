@@ -57,5 +57,5 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
     nbIter <- as.integer(nbIter)
     nbNodes <- as.integer(nbNodes)
 
-    return(simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes))
+    return(simuleSubNet(network$netAll, network$nodesAll, nbIter, nbNodes, seedV))
 }

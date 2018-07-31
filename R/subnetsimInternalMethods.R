@@ -33,7 +33,7 @@ fixSeed <- function(vSeed) {
 #' sub-networks all have the same number of nodes.
 #'
 #' @param netAll a \code{hash} representing the global network.
-#' @param nodesAll TODO
+#' @param nodesAll \code{list} of all the node in the network
 #' @param nbIter a \code{integer} indicating the number of iterations to be
 #' run.
 #' @param nbNodes a \code{integer} indicating the number of nodes that each
@@ -43,7 +43,15 @@ fixSeed <- function(vSeed) {
 #' is used.
 #'
 #' @return a \code{data.frame} containing all simulated sub-network. Each
-#' row of the \code{data.frame} corresponds to one simulation.
+#' row of the \code{data.frame} corresponds to one simulation.:
+#' \itemize{
+#' \item nbLink: Number of link starting from each node of the simulate subnetwork
+#' \item nbNodesOneLink: Number of node of the simulate subnetwork
+#'  plus the number of node connected with a node in the subnetwork
+#' \item nbLinkOneLink Number of link starting from each node of the simulate
+#' subnetwork plus the number of link starting from node connected with
+#' a node in the subnetwork
+#' }
 #'
 #' @examples
 #'
@@ -75,7 +83,7 @@ simuleSubNet <- function(netAll, nodesAll, nbIter, nbNodes, seedV) {
         }
     }
 
-    return(distSubNet)
+    return(data.frame(nbNodesOneLink=distSubNet[, 1], nbLinkOneLink=distSubNet[, 2] , nbLink=distSubNet[, 3]))
 }
 
 #' @title Counting the number of nodes and the number of links associated to a

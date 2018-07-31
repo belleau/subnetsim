@@ -8,7 +8,7 @@ The **subnetsim** package implements a permutation analysis, based on Monte Carl
 If you use this package for a publication, we would ask you to cite the 
 following:
 
-> Martial Boutchueng-Djidjou, Pascal Belleau, Nicolas Bilodeau, Suzanne Fortier, Sylvie Bourassa, Arnaud Droit, Sabine Elowe, Robert L. Faure. 2018. A type 2 diabetes disease module with a high collective influence for Cdk2 and PTPLAD1 is localized in endosomes. bioRxiv doi: 10.1101/341693 
+> Martial Boutchueng-Djidjou, Pascal Belleau, Nicolas Bilodeau, Suzanne Fortier, Sylvie Bourassa, Arnaud Droit, Sabine Elowe, Robert L. Faure. 2018. A type 2 diabetes disease module with a high collective influence for Cdk2 and PTPLAD1 is localized in endosomes. bioRxiv doi: 10.1101/341693
 
 
 ## Authors ##

@@ -6,7 +6,7 @@
 #' @importFrom ggplot2 ggplot geom_histogram geom_vline aes xlab ylab scale_color_manual theme
 #' @importFrom gridExtra grid.arrange
 #' @export
-plot.subnetwork <- function(x, bins=30, digits=4,...) {
+plot.subnetwork <- function(x, bins=30, ...) {
     # Print graph of the subnetwork object
     nbNodes=272
     df <- data.frame(nbNodes = nbNodes)

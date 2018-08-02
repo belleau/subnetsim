@@ -46,7 +46,7 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
     }
     if(!is.numeric(nbNodes) || length(nbNodes) != 1L || is.na(nbNodes) ||
             nbNodes <= 0) {
-        stop("'nbNodes' must be a positive integer")
+        stop("'nbNodes' must be a positive integer or a subnetwork must be present in the network object")
     }
 
     # seedV has to be an integer

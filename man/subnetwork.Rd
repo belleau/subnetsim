@@ -14,7 +14,7 @@
 subnetwork(network, nbIter = 10000, nbNodes = NULL, seedV = -1)
 }
 \arguments{
-\item{x}{the output object from \code{subnetwork} function to be plotted}
+\item{x}{the output object from \code{subnetwork} function}
 
 \item{bins}{the number of bins used to generate the histograms}
 
@@ -32,10 +32,6 @@ TODO.}
 seed used when reproducible results are
 needed. When a value inferior or equal to zero is given, a random integer
 is used. Default: \code{-1}.}
-
-\item{\ldots}{arguments passed to or from other methods}
-
-\item{x}{the output object from \code{subnetwork} function to be printed}
 
 \item{\ldots}{arguments passed to or from other methods}
 }

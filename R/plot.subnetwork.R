@@ -1,8 +1,6 @@
 #' @rdname subnetwork
 #' @method plot subnetwork
-#' @param x the output object from \code{subnetwork} function to be plotted
 #' @param bins the number of bins used to generate the histograms
-#' @param \ldots arguments passed to or from other methods
 #' @importFrom ggplot2 ggplot geom_histogram geom_vline aes xlab ylab scale_color_manual theme
 #' @importFrom gridExtra grid.arrange
 #' @export

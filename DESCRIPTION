@@ -9,6 +9,7 @@ Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: Artistic-2.0
 Depends: hash
+Imports: ggplot2, gridExtra, utils
 Suggests: testthat, knitr, rmarkdown
 Encoding: UTF-8
 LazyData: true

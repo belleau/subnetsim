@@ -7,7 +7,7 @@
 \alias{subnetwork}
 \title{TODO}
 \usage{
-\method{plot}{subnetwork}(x, digits = 4, ...)
+\method{plot}{subnetwork}(x, bins = 30, digits = 4, ...)
 
 \method{print}{subnetwork}(x, digits = 4, ...)
 
@@ -15,6 +15,8 @@ subnetwork(network, nbIter = 10000, nbNodes = NULL, seedV = -1)
 }
 \arguments{
 \item{x}{the output object from \code{subnetwork} function to be plotted}
+
+\item{bins}{the number of bins used to generate the histograms}
 
 \item{network}{an object \code{network} TODO}
 

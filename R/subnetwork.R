@@ -28,7 +28,8 @@
 #'
 #'
 subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
-                        seedV = -1) {
+                       nbLink=NULL, nbNodesOneLink=NULL,
+                       nbLinkOneLink=NULL, seedV = -1) {
 
     ####################################################
     # Parameters validation
@@ -40,14 +41,31 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
     }
 
     # nbNodes has to be a positive integer
-    if(is.null(nbNodes) &&
+    if((is.null(nbNodes) ||
+        is.null(nbLink) || is.null(nbNodesOneLink) ||
+        is.null(nbLinkOneLink) ) &&
        !(is.null(network$nodesSubNet))) {
+        if(!(is.null(nbNodes) &&
+           is.null(nbLink) && is.null(nbNodesOneLink) &&
+           is.null(nbLinkOneLink))){
+            warning("The parameters 'nbNodes', 'nbLink', 'nbNodesOneLink' and
+                    'nbLinkOneLink' are mixed NULL and not NULL we used
+                    the value of the subNetwork of the objet network.")
+        }
         nbNodes <- length(network$nodesSubNet)
+        nbLink <- getSubNet(network, network$nodesSubNet)
+        tmp <- getOneLink(network, network$nodesSubNet)
+        nbNodesOneLink <- tmp[1]
+        nbLinkOneLink <- tmp[2]
     }
     if(!is.numeric(nbNodes) || length(nbNodes) != 1L || is.na(nbNodes) ||
             nbNodes <= 0) {
-        stop("'nbNodes' must be a positive integer or a subnetwork must be present in the network object")
+        stop(paste0("The parameters 'nbNodes', 'nbLink', 'nbNodesOneLink' and ",
+                    "'nbLinkOneLink' must be a positive integer or a subnetwork ",
+                    "must be present in the network object"))
     }
+
+
 
     # seedV has to be an integer
     if(!is.numeric(seedV) || length(seedV) != 1L || is.na(seedV)) {

@@ -26,7 +26,9 @@ test_that("subnetwork() must return error when seedV not integer", {
 })
 
 test_that("subnetwork() must return error when nbNodes not positive integer", {
-    error_message <- "'nbNodes' must be a positive integer"
+    error_message <- paste0("The parameters 'nbNodes', 'nbLink', 'nbNodesOneLink' and ",
+                            "'nbLinkOneLink' must be a positive integer or a subnetwork ",
+                            "must be present in the network object")
     expect_error( subnetwork(network = demo_netAll,
                              nbIter = 3,
                              nbNodes = 0, seedV = 33), error_message)

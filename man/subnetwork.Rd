@@ -11,7 +11,8 @@
 
 \method{print}{subnetwork}(x, digits = 4, ...)
 
-subnetwork(network, nbIter = 10000, nbNodes = NULL, seedV = -1)
+subnetwork(network, nbIter = 10000, nbNodes = NULL, nbLink = NULL,
+  nbNodesOneLink = NULL, nbLinkOneLink = NULL, seedV = -1)
 }
 \arguments{
 \item{x}{the output object from \code{subnetwork} function to be plotted}

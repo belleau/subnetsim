@@ -148,8 +148,8 @@ getOneLink <- function(netAll, nodesSel) {
 #' @description Counting the number of links in a network.
 #'
 #' @param netAll a \code{hash} representing the global network.
-#' @param nodesSel a \code{vector} of \code{caracter} representing all the
-#' nodes contained in the sub-network.
+#' @param nodesSel a \code{vector} of \code{caracter} strings
+#' representing all the nodes contained in the subnetwork.
 #'
 #' @return a \code{integer} representing the number of links.
 #'

@@ -54,6 +54,9 @@ package="subnetsim")
 demo_network_with_sub <- network(netFileName = networkFile,
     subNetFileName = subnetworkFile)
 
+## The network is of object of class "network"
+class(demo_network_with_sub)
+
 ## The list of nodes present in the subnetwork
 demo_network_with_sub$nodesSubNet
 

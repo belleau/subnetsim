@@ -19,7 +19,18 @@ Generation of a network list from sif.
 }
 \examples{
 
-## TODO
+networkFile <- system.file("extdata", "demo_network.sif",
+package="subnetsim")
+
+## Create a network without the subnetwork information
+demo_network <- networkFromSif(netFileName = networkFile)
+
+subnetworkFile <- system.file("extdata", "demo_subnetwork.sif",
+package="subnetsim")
+
+## Create a network with the subnetwork information
+demo_network_with_sub <- networkFromSif(netFileName = networkFile,
+    subNetFileName = subnetworkFile)
 
 }
 \author{

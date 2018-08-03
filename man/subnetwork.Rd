@@ -5,7 +5,7 @@
 \alias{plot.subnetwork}
 \alias{print.subnetwork}
 \alias{subnetwork}
-\title{TODO}
+\title{Subnetwork simulation through randomness sampling}
 \usage{
 \method{plot}{subnetwork}(x, bins = 30, ...)
 
@@ -21,13 +21,38 @@ subnetwork(network, nbIter = 10000, nbNodes = NULL, nbLink = NULL,
 
 \item{digits}{the number of digits to use when printing numbers}
 
-\item{network}{an object \code{network} TODO}
+\item{network}{an object of \code{class} \code{network} that represents
+the global network from which the tested subnetwork is extracted. The
+subnetwork can be included as an element of the \code{network} object.
+If the subnetwork is included in the \code{network} object, the
+\code{nbNodes}, \code{nbLink}, \code{nbNodesOneLink} and
+\code{nbLinkOneLink} parameters should all be \code{NULL}. If the
+subnetwork is not included, all four parameters should be set.}
 
 \item{nbIter}{a single \code{numeric}, interpreted as an \code{integer}
 indicating the number of iterations to be run. Default: \code{10000}.}
 
 \item{nbNodes}{a single \code{numeric}, interpreted as an \code{integer}
-TODO.}
+the number of nodes of the tested subnetwork. If the value is \code{NULL},
+the value is obtained through the subnetwork present in the network object.
+Default: \code{NULL}.}
+
+\item{nbLink}{a single \code{numeric}, interpreted as an \code{interger},
+the number of links of the tested subnetwork. If the value is \code{NULL},
+the value is obtained through the subnetwork present in the network object.
+Default: \code{NULL}.}
+
+\item{nbNodesOneLink}{a single \code{numeric}, interpreted as an \code{interger},
+the number of nodes of the tested subnetwork including the first-degree neighbor
+nodes. If the value is \code{NULL},
+the value is obtained through the subnetwork present in the network object.
+Default: \code{NULL}.}
+
+\item{nbLinkOneLink}{a single \code{numeric}, interpreted as an \code{interger},
+the number of links of the tested subnetwork including all the links of the
+first-degree neighbor nodes. If the value is \code{NULL},
+the value is obtained through the subnetwork present in the network object.
+Default: \code{NULL}.}
 
 \item{seedV}{a single \code{numeric}, interpreted as an \code{integer}, a
 seed used when reproducible results are
@@ -37,15 +62,32 @@ is used. Default: \code{-1}.}
 \item{\ldots}{arguments passed to or from other methods}
 }
 \value{
-a list is returned for use by \code{print.subnetwork}. This list has
-           the following components:
+a list is returned for use by \code{print.subnetwork} and
+\code{plot.subnetwork}. This list has the following components:
            \itemize{
-               \item{ TODO }
-               \item{ TODO }
+               \item{ \code{nbNodesOneLink} a vector of the number of nodes
+               for each simulated subnetwork extended to contain the
+               first-degree nodes. }
+               \item{ \code{nbLinkOneLink} a vector of the number of links
+               for each simulated subnetwork extended to contain all
+               the links from thefirst-degree nodes. }
+               \item{ \code{nbLink} a vector of the number of links
+               for each simulated subnetwork. }
+               \item{ \code{nbIter} a single \code{integer} corresponding
+               to the number of iterations done. }
+               \item{ \code{nbNodes} a single \code{integer} corresponding
+               to the number of nodes of the tested subnetwork. }
+               \item{ \code{seed} a single \code{numeric} corresponding
+               to the seed used for the analysis.}
            }
 }
 \description{
-TODO
+Simulates a fixed number of subnetwork through randomness sampling.
+Each subnetwork is containing the same fixed number of nodes. For all simulated
+subetwork, three important informations are extracted: the number of
+nodes present when including the first-degree neighbor nodes, the number
+of links and the number of links when includes all links from the first-degree
+neighbor nodes.
 }
 \examples{
 ## TODO

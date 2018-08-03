@@ -13,32 +13,113 @@ test_that("subnetwork() must return error when seedV not integer", {
     error_message <- "'seedV' must be an integer"
     expect_error( subnetwork(network = demo_netAll,
                             nbIter = 3,
-                            nbNodes = 10, seedV = "ALLO"), error_message)
+                            nbNodes = 10, nbLink = 1,
+                            nbNodesOneLink = 1, nbLinkOneLink=1,
+                            seedV = "ALLO"), error_message)
     expect_error( subnetwork(network = demo_netAll,
                             nbIter = 3,
-                            nbNodes = 10, seedV = c(2, 3)), error_message)
+                            nbNodes = 10, nbLink = 1,
+                            nbNodesOneLink = 1, nbLinkOneLink=1,
+                            seedV = c(2, 3)), error_message)
     expect_error( subnetwork(network = demo_netAll,
                              nbIter = 3,
-                             nbNodes = 10, seedV = NA), error_message)
+                             nbNodes = 10, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = NA), error_message)
     expect_error( subnetwork(network = demo_netAll,
                              nbIter = 3,
-                             nbNodes = 10, seedV = "3.3"), error_message)
+                             nbNodes = 10, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = "3.3"), error_message)
 })
 
-test_that("subnetwork() must return error when nbNodes not positive integer", {
+test_that(paste0("subnetwork() must return error when nbNodes, nbLink, ",
+                "nbNodesOneLink, and nbLinkOneLink not positive integer"), {
     error_message <- paste0("The parameters 'nbNodes', 'nbLink', 'nbNodesOneLink' and ",
                             "'nbLinkOneLink' must be a positive integer or a subnetwork ",
                             "must be present in the network object")
     expect_error( subnetwork(network = demo_netAll,
                              nbIter = 3,
-                             nbNodes = 0, seedV = 33), error_message)
+                             nbNodes = 0, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 33), error_message)
     expect_error( subnetwork(network = demo_netAll,
                              nbIter = 3,
-                             nbNodes = -1, seedV = 32), error_message)
+                             nbNodes = -1, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 32), error_message)
     expect_error( subnetwork(network = demo_netAll,
                              nbIter = 3,
-                             nbNodes = "ALLO", seedV = 333), error_message)
+                             nbNodes = "ALLO", nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 333), error_message)
     expect_error( subnetwork(network = demo_netAll,
                              nbIter = 3,
-                             nbNodes = c(2, 3), seedV = 33), error_message)
+                             nbNodes = c(2, 3), nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 33), error_message)
+    # Test nbLink
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 0,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 33), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 0, nbLink = -1,
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 32), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = "ALLO",
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 333), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = c(2, 3),
+                             nbNodesOneLink = 1, nbLinkOneLink=1,
+                             seedV = 33), error_message)
+    # test nbNodesOneLink
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = 0, nbLinkOneLink=1,
+                             seedV = 33), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = -1, nbLinkOneLink=1,
+                             seedV = 32), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = "ALLO", nbLinkOneLink=1,
+                             seedV = 333), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = c(2, 3), nbLinkOneLink=1,
+                             seedV = 33), error_message)
+    # Test nbLinkOneLink
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=0,
+                             seedV = 33), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=-1,
+                             seedV = 32), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink="ALLO",
+                             seedV = 333), error_message)
+    expect_error( subnetwork(network = demo_netAll,
+                             nbIter = 3,
+                             nbNodes = 1, nbLink = 1,
+                             nbNodesOneLink = 1, nbLinkOneLink=c(2, 3),
+                             seedV = 33), error_message)
+
 })

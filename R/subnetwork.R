@@ -105,8 +105,15 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
         nbNodesOneLink <- tmp[1]
         nbLinkOneLink <- tmp[2]
     }
-    if(!is.numeric(nbNodes) || length(nbNodes) != 1L || is.na(nbNodes) ||
-            nbNodes <= 0) {
+    if((!is.numeric(nbNodes) || length(nbNodes) != 1L || is.na(nbNodes) ||
+            nbNodes <= 0 ) ||
+       (!is.numeric(nbLink) || length(nbLink) != 1L || is.na(nbLink) ||
+        nbLink <= 0 ) ||
+       (!is.numeric(nbNodesOneLink) || length(nbNodesOneLink) != 1L || is.na(nbNodesOneLink) ||
+        nbNodesOneLink <= 0 ) ||
+       (!is.numeric(nbLinkOneLink) || length(nbLinkOneLink) != 1L || is.na(nbLinkOneLink) ||
+        nbLinkOneLink <= 0 )
+       ) {
         stop(paste0("The parameters 'nbNodes', 'nbLink', 'nbNodesOneLink' and ",
                     "'nbLinkOneLink' must be a positive integer or a subnetwork ",
                     "must be present in the network object"))

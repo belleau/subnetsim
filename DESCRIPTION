@@ -15,6 +15,7 @@ License: Artistic-2.0
 Depends: hash
 Imports: ggplot2, gridExtra, utils
 Suggests: testthat, knitr, rmarkdown
+VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0

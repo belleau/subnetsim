@@ -1,7 +1,7 @@
 Package: subnetsim
 Type: Package
 Title: Testing if a subnetwork is significantly more connected
-    then randomly selected subnetworks with the same number of nodes.
+    than randomly selected subnetworks with the same number of nodes
 Date: 2018-07-24
 Version: 0.1.0
 Author: Pascal Belleau, Astrid Deschênes 

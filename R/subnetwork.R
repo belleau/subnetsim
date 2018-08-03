@@ -100,8 +100,8 @@ subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
                     the value of the subNetwork of the objet network.")
         }
         nbNodes <- length(network$nodesSubNet)
-        nbLink <- getSubNet(network, network$nodesSubNet)
-        tmp <- getOneLink(network, network$nodesSubNet)
+        nbLink <- getSubNet(network$netAll, network$nodesSubNet)
+        tmp <- getOneLink(network$netAll, network$nodesSubNet)
         nbNodesOneLink <- tmp[1]
         nbLinkOneLink <- tmp[2]
     }

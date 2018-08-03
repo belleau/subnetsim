@@ -4,6 +4,9 @@ library(subnetsim)
 
 load(system.file("extdata", "demo_netAll.RData",
                  package = "subnetsim"))
+load(system.file("extdata", "demo_netWithoutSub.RData",
+                 package = "subnetsim"))
+
 
 ### Tests subnetwork() parameters
 
@@ -123,3 +126,46 @@ test_that(paste0("subnetwork() must return error when nbNodes, nbLink, ",
                              seedV = 33), error_message)
 
 })
+
+test_that(paste0("subnetwork() must return error when at least one of nbNodes, nbLink, ",
+                 "nbNodesOneLink, and nbLinkOneLink are NULL and the object network",
+                 " don't have subnetwork"), {
+    error_message <- paste0("The parameters 'nbNodes', 'nbLink', 'nbNodesOneLink' and ",
+                             "'nbLinkOneLink' must be a positive integer or a subnetwork ",
+                             "must be present in the network object")
+    expect_error( subnetwork(network = demo_netWithoutSub,
+                              nbIter = 3,
+                              nbLink = 1,
+                              nbNodesOneLink = 1, nbLinkOneLink=1,
+                              seedV = 33), error_message)
+    expect_error( subnetwork(network = demo_netWithoutSub,
+                              nbIter = 3,
+                              nbNodes = -1,
+                              nbNodesOneLink = 1, nbLinkOneLink=1,
+                              seedV = 32), error_message)
+    expect_error( subnetwork(network = demo_netWithoutSub,
+                              nbIter = 3,
+                              nbNodes = "ALLO", nbLink = 1,
+                              nbLinkOneLink=1,
+                              seedV = 333), error_message)
+    expect_error( subnetwork(network = demo_netWithoutSub,
+                              nbIter = 3,
+                              nbNodes = c(2, 3), nbLink = 1,
+                              nbNodesOneLink = 1,
+                              seedV = 33), error_message)
+})
+
+# test_that(paste0("subnetwork() return predicted results when seed fixed"), {
+#     expect_equal(subnetwork(demo_netAll, 4, 33, 40, 55, 70, 145),
+#                  list(nbNodesOneLink=c(153, 166, 145, 157),
+#                             nbLinkOneLink=c(213, 257, 242, 205),
+#                             nbLink=c(13, 13, 16, 8),
+#                             nbIter=3,
+#                             nbNodes=33,
+#                             nbNodesOneLink=70,
+#                             nbLinkOneLink=70,
+#                             nbLink=40,
+#                             seed=145
+#                             ))
+# })
+

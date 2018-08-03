@@ -2,7 +2,7 @@
 % Please edit documentation in R/network.R
 \name{network}
 \alias{network}
-\title{Generate a network object from a fileType.}
+\title{Creates a network object from a SIF file}
 \usage{
 network(netFileName, fileType = "sif", subNetFileName = NULL)
 }
@@ -14,7 +14,9 @@ network(netFileName, fileType = "sif", subNetFileName = NULL)
 \item{subNetFileName}{TODO}
 }
 \value{
-a \code{object} marked as an network \code{class}.
+a list marked as an network \code{class} is returned.
+This list has the following components:
+           \itemize{ }
 }
 \description{
 Generation of a network object.

@@ -1,5 +1,5 @@
 
-#' @title Generate a network object from a fileType.
+#' @title Creates a network object from a SIF file
 #'
 #' @description Generation of a network object.
 #'
@@ -8,7 +8,9 @@
 #' @param subNetFileName TODO
 #'
 #'
-#' @return a \code{object} marked as an network \code{class}.
+#' @return a list marked as an network \code{class} is returned.
+#' This list has the following components:
+#'            \itemize{ }
 #'
 #' @examples
 #'

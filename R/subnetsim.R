@@ -1,5 +1,5 @@
 #' subnetsim: Testing if a subnetwork is significantly more connected
-#' then randomly selected subnetworks with the same number of nodes.
+#' then randomly selected subnetworks with the same number of nodes
 #'
 #' This package tests the hypothesis that a specific subnetwork is more connected
 #' than randomly selected subnetworks with the same number of nodes. Three

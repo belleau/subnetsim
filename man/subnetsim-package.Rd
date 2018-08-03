@@ -4,14 +4,9 @@
 \name{subnetsim-package}
 \alias{subnetsim-package}
 \alias{subnetsim}
-\title{subnetsim: Permutation-Based Analysis}
+\title{subnetsim: Testing if a subnetwork is significantly more connected
+then randomly selected subnetworks with the same number of nodes}
 \description{
-This package does a permutation analysis, based on Monte Carlo sampling,
-for testing the hypothesis that the number of observed linked inside
-a subnetwork is significantly higher that the number obtained by a
-stochastic effect with a subnetwork with the same number of node.
-}
-\details{
 This package tests the hypothesis that a specific subnetwork is more connected
 than randomly selected subnetworks with the same number of nodes. Three
 measures of connectivity are validated: the number of links starting from the nodes

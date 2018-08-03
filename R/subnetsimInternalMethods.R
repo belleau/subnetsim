@@ -27,30 +27,30 @@ fixSeed <- function(vSeed) {
 }
 
 
-#' @title Generating simulated sub-networks.
+#' @title Generating simulated subnetworks.
 #'
-#' @description Generationg multiple simulated sub-networks from a network. The
-#' sub-networks all have the same number of nodes.
+#' @description Generationg multiple simulated sub-networks from a network.
+#' All subnetworks have the same number of nodes.
 #'
 #' @param netAll a \code{hash} representing the global network.
-#' @param nodesAll \code{list} of all the node in the network
-#' @param nbIter a \code{integer} indicating the number of iterations to be
-#' run.
+#' @param nodesAll \code{list} of \code{character} string representing
+#' all the nodes in the global network.
+#' @param nbIter a single \code{integer} indicating the number of iterations
+#' to be run.
 #' @param nbNodes a \code{integer} indicating the number of nodes that each
 #' simulated sub-network will contain.
 #' @param seedV a \code{integer}, a seed used when reproducible results are
 #' needed. When a value inferior or equal to zero is given, a random integer
 #' is used.
 #'
-#' @return a \code{data.frame} containing all simulated sub-network. Each
-#' row of the \code{data.frame} corresponds to one simulation.:
+#' @return a \code{data.frame} containing the information from all simulated
+#' subnetworks. Each row of the \code{data.frame} corresponds to one simulation:
 #' \itemize{
-#' \item nbLink: Number of link starting from each node of the simulate subnetwork
-#' \item nbNodesOneLink: Number of node of the simulate subnetwork
-#'  plus the number of node connected with a node in the subnetwork
-#' \item nbLinkOneLink Number of link starting from each node of the simulate
-#' subnetwork plus the number of link starting from node connected with
-#' a node in the subnetwork
+#' \item nbLink: Number of links in the simulated subnetworks
+#' \item nbNodesOneLink: Number of nodes of the simulated subnetworks
+#'  including the first-degree neighbor nodes.
+#' \item nbLinkOneLink Number of links of the simulated subnetworks
+#'  including all the links from the first-degree neighbor nodes.
 #' }
 #'
 #' @examples
@@ -83,26 +83,26 @@ simuleSubNet <- function(netAll, nodesAll, nbIter, nbNodes, seedV) {
         }
     }
 
-    return(data.frame(nbNodesOneLink=distSubNet[, 1], nbLinkOneLink=distSubNet[, 2] , nbLink=distSubNet[, 3]))
+    return(data.frame(nbNodesOneLink=distSubNet[, 1],
+                      nbLinkOneLink=distSubNet[, 2] , nbLink=distSubNet[, 3]))
 }
 
 #' @title Counting the number of nodes and the number of links associated to a
-#' sub-network.
+#' subnetwork.
 #'
 #' @description Counting the number of nodes and the number of links in a
-#' sub-network. From a list of nodes forming the sub-network, the number of
-#' nodes and the number of links associated to the sub-network are calculated.
-#' The nodes and links inside the sub-network are counted as well as all nodes
-#' and links that are directly linked to the sub-network (on degree of
-#' distance).
+#' specific subnetwork. From a list of nodes forming the subnetwork, the number of
+#' nodes and the number of links associated to the subnetwork are calculated.
+#' The nodes and links inside the subnetwork are counted as well as all first-degree
+#' neighbor nodes and all links associated to the first-degree nodes.
 #'
 #' @param netAll a \code{hash} representing the global network.
-#' @param nodesSel a \code{vector} of \code{caracter} representing all the
-#' nodes contained in the sub-network.
+#' @param nodesSel a \code{vector} of \code{caracter} strings representing all the
+#' nodes contained in the subnetwork.
 #'
 #' @return a \code{vector} containing 2 \code{integer}. The first
-#' \code{integer} represent the number of nodes and the second \code{integer}
-#' represents the number of links associated to a sub-network.
+#' \code{integer} represents the number of nodes and the second \code{integer}
+#' represents the number of links associated to the tested subnetwork.
 #'
 #' @examples
 #'
@@ -148,8 +148,8 @@ getOneLink <- function(netAll, nodesSel) {
 #' @description Counting the number of links in a network.
 #'
 #' @param netAll a \code{hash} representing the global network.
-#' @param nodesSel a \code{vector} of \code{caracter} representing all the
-#' nodes contained in the sub-network.
+#' @param nodesSel a \code{vector} of \code{caracter} strings
+#' representing all the nodes contained in the subnetwork.
 #'
 #' @return a \code{integer} representing the number of links.
 #'

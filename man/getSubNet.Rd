@@ -9,8 +9,8 @@ getSubNet(netAll, nodesSel)
 \arguments{
 \item{netAll}{a \code{hash} representing the global network.}
 
-\item{nodesSel}{a \code{vector} of \code{caracter} representing all the
-nodes contained in the sub-network.}
+\item{nodesSel}{a \code{vector} of \code{caracter} strings
+representing all the nodes contained in the subnetwork.}
 }
 \value{
 a \code{integer} representing the number of links.

@@ -2,17 +2,18 @@
 % Please edit documentation in R/subnetsimInternalMethods.R
 \name{simuleSubNet}
 \alias{simuleSubNet}
-\title{Generating simulated sub-networks.}
+\title{Generating simulated subnetworks.}
 \usage{
 simuleSubNet(netAll, nodesAll, nbIter, nbNodes, seedV)
 }
 \arguments{
 \item{netAll}{a \code{hash} representing the global network.}
 
-\item{nodesAll}{\code{list} of all the node in the network}
+\item{nodesAll}{\code{list} of \code{character} string representing
+all the nodes in the global network.}
 
-\item{nbIter}{a \code{integer} indicating the number of iterations to be
-run.}
+\item{nbIter}{a single \code{integer} indicating the number of iterations
+to be run.}
 
 \item{nbNodes}{a \code{integer} indicating the number of nodes that each
 simulated sub-network will contain.}
@@ -22,20 +23,19 @@ needed. When a value inferior or equal to zero is given, a random integer
 is used.}
 }
 \value{
-a \code{data.frame} containing all simulated sub-network. Each
-row of the \code{data.frame} corresponds to one simulation.:
+a \code{data.frame} containing the information from all simulated
+subnetworks. Each row of the \code{data.frame} corresponds to one simulation:
 \itemize{
-\item nbLink: Number of link starting from each node of the simulate subnetwork
-\item nbNodesOneLink: Number of node of the simulate subnetwork
- plus the number of node connected with a node in the subnetwork
-\item nbLinkOneLink Number of link starting from each node of the simulate
-subnetwork plus the number of link starting from node connected with
-a node in the subnetwork
+\item nbLink: Number of links in the simulated subnetworks
+\item nbNodesOneLink: Number of nodes of the simulated subnetworks
+ including the first-degree neighbor nodes.
+\item nbLinkOneLink Number of links of the simulated subnetworks
+ including all the links from the first-degree neighbor nodes.
 }
 }
 \description{
-Generationg multiple simulated sub-networks from a network. The
-sub-networks all have the same number of nodes.
+Generationg multiple simulated sub-networks from a network.
+All subnetworks have the same number of nodes.
 }
 \examples{
 

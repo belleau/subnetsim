@@ -3,28 +3,27 @@
 \name{getOneLink}
 \alias{getOneLink}
 \title{Counting the number of nodes and the number of links associated to a
-sub-network.}
+subnetwork.}
 \usage{
 getOneLink(netAll, nodesSel)
 }
 \arguments{
 \item{netAll}{a \code{hash} representing the global network.}
 
-\item{nodesSel}{a \code{vector} of \code{caracter} representing all the
-nodes contained in the sub-network.}
+\item{nodesSel}{a \code{vector} of \code{caracter} strings representing all the
+nodes contained in the subnetwork.}
 }
 \value{
 a \code{vector} containing 2 \code{integer}. The first
-\code{integer} represent the number of nodes and the second \code{integer}
-represents the number of links associated to a sub-network.
+\code{integer} represents the number of nodes and the second \code{integer}
+represents the number of links associated to the tested subnetwork.
 }
 \description{
 Counting the number of nodes and the number of links in a
-sub-network. From a list of nodes forming the sub-network, the number of
-nodes and the number of links associated to the sub-network are calculated.
-The nodes and links inside the sub-network are counted as well as all nodes
-and links that are directly linked to the sub-network (on degree of
-distance).
+specific subnetwork. From a list of nodes forming the subnetwork, the number of
+nodes and the number of links associated to the subnetwork are calculated.
+The nodes and links inside the subnetwork are counted as well as all first-degree
+neighbor nodes and all links associated to the first-degree nodes.
 }
 \examples{
 

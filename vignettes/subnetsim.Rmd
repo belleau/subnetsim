@@ -72,7 +72,24 @@ library(subnetsim)
 
 # An analysis step by step
 
-## Loading the global network
+## Loading the global network and the tested subnetwork
+
+The networks must be in a SIF format file. The *network()* function 
+must be used to load the networks.
+
+```{r loadNetwork, warning=FALSE, message=FALSE, collapse=TRUE, cache=TRUE}
+# Access demo files stored in the subnetsim package
+networkFile <- system.file("extdata", "demo_network.sif", package="subnetsim")
+subnetworkFile <- system.file("extdata", "demo_subnetwork.sif", package="subnetsim")
+
+# Load a global network and its tested subnetwork using 
+# SIF format files
+demo_network_with_sub <- network(netFileName = networkFile,
+                                 subNetFileName = subnetworkFile)
+
+# The returned object is an object of class "network"
+class(demo_network_with_sub)
+```
 
 ## Generating the simulated subnetwork
 

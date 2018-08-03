@@ -7,15 +7,32 @@
 networkFromSif(netFileName, subNetFileName = NULL)
 }
 \arguments{
-\item{netFileName}{TODO}
+\item{netFileName}{a \code{character} string for the name of
+file in SIF format that contains the information of the
+global network.}
 
-\item{subNetFileName}{TODO}
+\item{subNetFileName}{a \code{character} string for the name of
+file in SIF format that contains the information of the
+subnetwork. This parameter is not mandatory. The information for
+the subnetwork is only extracted when a filename is given.}
 }
 \value{
-a \code{data.frame} containing all simulated sub-network.
+a \code{list} containing the following components:
+           \itemize{
+           \item{ \code{netAll} a \code{hash} containing all
+           the information from the global network.}
+           \item{ \code{nodesAll} a vector of string representing
+           all the nodes present in the global network.}
+           \item{ \code{nodesSubNet} a vector of string representing
+           all the nodes present in the subnetwork to be tested or
+           \code{NULL} when information not known.}
+           }
 }
 \description{
-Generation of a network list from sif.
+Generation of a list that contain all the
+global network information extracted from a sif file. When
+a subnetwork file is present, the information from
+the subnetwork is added to the list.
 }
 \examples{
 

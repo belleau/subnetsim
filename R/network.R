@@ -14,7 +14,7 @@
 #' @param subNetFileName a \code{character} string for the name of
 #' file in SIF format that contains the information of the
 #' subnetwork. This parameter is not mandatory. The information for
-#' the subnetwork is only extracted when a file is given.
+#' the subnetwork is only extracted when a filename is given.
 #' Default: \code{NULL}.
 #'
 #'

@@ -155,42 +155,47 @@ test_that(paste0("subnetwork() must return error when at least one of nbNodes, n
                               seedV = 33), error_message)
 })
 
-# test_that(paste0("subnetwork() return predicted results when seed fixed"), {
-#     bla <- subnetwork(demo_netAll, nbIter=4, nbNodes=33,
-#                       nbLink=40, nbNodesOneLink=55,
-#                       nbLinkOneLink=70, seedV=145)
-#     expect_equal(bla$nbNodesOneLink,
-#                  c(153, 166, 145, 157))
-#     expect_equal(bla$nbLinkOneLink,
-#                  c(213, 257, 242, 205))
-#     expect_equal(bla$nbLink,
-#                  c(13, 13, 16, 8))
-#     expect_equal(bla$nbIter,
-#                  3)
-#     expect_equal(bla$nbNodes,
-#                  30)
-#     expect_equal(bla$nbNodesOneLink,
-#                  70)
-#     expect_equal(bla$nbLinkOneLink,
-#                  70)
-#     expect_equal(bla$nbLink,
-#                  40)
-#     expect_equal(bla$seed,
-#                  145)
-#
-#
-#     # expect_equal(,
-#     #              list(nbNodesOneLink=c(153, 166, 145, 157),
-#     #                   nbLinkOneLink=c(213, 257, 242, 205),
-#     #                   nbLink=c(13, 13, 16, 8),
-#     #                   nbIter=3,
-#     #                   nbNodes=33,
-#     #                   nbNodesOneLink=70,
-#     #                   nbLinkOneLink=70,
-#     #                   nbLink=40,
-#     #                   seed=145,
-#     #                   attr(*, "class")= chr "subnetwork"
-#     #              ))
-#     #
-# })
+test_that(paste0("subnetwork() return predicted results when seed fixed"), {
+    bla <- subnetwork(demo_netAll, nbIter=4, nbNodes=33,
+                      nbLink=40, nbNodesOneLink=55,
+                      nbLinkOneLink=70, seedV=145)
+    expect_equal(bla$nbNodesOneLink,
+                 c(153, 166, 145, 157))
+    expect_equal(bla$nbLinkOneLink,
+                 c(213, 257, 242, 205))
+    expect_equal(bla$nbLink,
+                 c(13, 13, 16, 8))
+    expect_equal(bla$nbIter,
+                 4)
+    expect_equal(bla$nbNodes,
+                 33)
+    expect_equal(bla$nbNodesOneLinkTested,
+                 55)
+    expect_equal(bla$nbLinkOneLinkTested,
+                 70)
+    expect_equal(bla$nbLinkTested,
+                 40)
+    expect_equal(bla$seed,
+                 145)
+    bla <- subnetwork(demo_netAll, nbIter=4, seedV=145)
+    expect_equal(bla$nbNodesOneLink,
+                 c(243, 257, 256, 250))
+    expect_equal(bla$nbLinkOneLink,
+                 c(667, 677, 639, 608))
+    expect_equal(bla$nbLink,
+                 c(138, 145, 136, 114))
+    expect_equal(bla$nbIter,
+                 4)
+    expect_equal(bla$nbNodes,
+                 103)
+    expect_equal(bla$nbNodesOneLinkTested,
+                 275)
+    expect_equal(bla$nbLinkOneLinkTested,
+                 830)
+    expect_equal(bla$nbLinkTested,
+                 330)
+    expect_equal(bla$seed,
+                 145)
+
+})
 

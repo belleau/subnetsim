@@ -7,11 +7,18 @@
 network(netFileName, fileType = "sif", subNetFileName = NULL)
 }
 \arguments{
-\item{netFileName}{a}
+\item{netFileName}{a \code{character} string for the name of
+file in SIF format that contains the information of the
+global network.}
 
-\item{fileType}{TODO}
+\item{fileType}{The format of the file. At this moment,
+only "SIF" format is accepted. Default: \code{"sif"}.}
 
-\item{subNetFileName}{TODO}
+\item{subNetFileName}{a \code{character} string for the name of
+file in SIF format that contains the information of the
+subnetwork. This parameter is not mandatory. The information for
+the subnetwork is only extracted when a file is given.
+Default: \code{NULL}.}
 }
 \value{
 a list marked as an network \code{class} is returned.

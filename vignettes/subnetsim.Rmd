@@ -1,12 +1,12 @@
 ---
-title: "Testing if a subnetwork is significantly more connected than randomly selected subnetworks with the same number of nodes"
+title: "Validating that a specific subnetwork is significantly more connected than randomly selected subnetworks with the same number of nodes"
 author:  Pascal Belleau and Astrid Deschênes
 output:
   html_document:
     toc: true
 bibliography: biblio.bibtex
 vignette: >
-  %\VignetteIndexEntry{TODO}
+  %\VignetteIndexEntry{Testing if a subnetwork is significantly more connected than randomly selected subnetworks with the same number of nodes}
   %\VignettePackage{subnetsim}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
@@ -36,7 +36,7 @@ redistribute this software.
 
 # Introduction
 
-Network science is a cross-disciplinary domain that focuses on the representation, analysis and modeling of complex biological, social and technological systems as networks or graphs.
+Network science is a cross-disciplinary domain that focuses on the representation, analysis and modeling of complex systems as networks or graphs. Networks are commonly used to study complex systems in many disciplines such as social science, computer science and  life sciences [@Bader].
 
 A network model is a mathematical model that is designed to represent entities and their relationships in a system. A network is a collection of nodes (or vertices or sites or actors) joined by edges (or links or bonds or ties). Throught the help of modern computers, the structure of complexe and quite large networks can now be more easily generated, visualized and analyzed. Even more, as networks are logically equivalent to graphs, knownledge that can be represented as a set of entities with interactions can be represented as a network.
 

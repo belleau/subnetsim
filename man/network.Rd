@@ -7,23 +7,55 @@
 network(netFileName, fileType = "sif", subNetFileName = NULL)
 }
 \arguments{
-\item{netFileName}{TODO}
+\item{netFileName}{a \code{character} string for the name of
+file in SIF format that contains the information of the
+global network.}
 
-\item{fileType}{TODO}
+\item{fileType}{The format of the file. At this moment,
+only "SIF" format is accepted. Default: \code{"sif"}.}
 
-\item{subNetFileName}{TODO}
+\item{subNetFileName}{a \code{character} string for the name of
+file in SIF format that contains the information of the
+subnetwork. This parameter is not mandatory. The information for
+the subnetwork is only extracted when a file is given.
+Default: \code{NULL}.}
 }
 \value{
 a list marked as an network \code{class} is returned.
 This list has the following components:
-           \itemize{ }
+           \itemize{
+           \item{ \code{netAll} a \code{hash} containing all
+           the information from the global network.}
+           \item{ \code{nodesAll} a vector of string representing
+           all the nodes present in the global network.}
+           \item{ \code{nodesSubNet} a vector of string representing
+           all the nodes present in the subnetwork to be tested or
+           \code{NULL} when information not known.}
+           }
 }
 \description{
-Generation of a network object.
+Generates a network object using the contain of
+a SIF file. When a file is specified for the subnetwork to
+be tested, the information of the subnetwork is extracted
+from the SIF file and added to the network object.
 }
 \examples{
 
-## TODO
+networkFile <- system.file("extdata", "demo_network.sif",
+package="subnetsim")
+
+## Create a network without the subnetwork information
+demo_network <- network(netFileName = networkFile)
+
+subnetworkFile <- system.file("extdata", "demo_subnetwork.sif",
+package="subnetsim")
+
+## Create a network with the subnetwork information
+demo_network_with_sub <- network(netFileName = networkFile,
+    subNetFileName = subnetworkFile)
+
+## The list of nodes present in the subnetwork
+demo_network_with_sub$nodesSubNet
 
 }
 \author{

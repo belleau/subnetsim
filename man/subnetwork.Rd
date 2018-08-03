@@ -77,13 +77,13 @@ a list is returned for use by \code{print.subnetwork} and
                to the number of iterations done. }
                \item{ \code{nbNodes} a single \code{integer} corresponding
                to the number of nodes of the tested subnetwork. }
-               \item{ \code{nbNodesOneLink} a single \code{integer}
+               \item{ \code{nbNodesOneLinkTested} a single \code{integer}
                corresponding to the number of nodes of the tested subnetwork
                when first-degree neighbor nodes are included. }
-               \item{ \code{nbLinkOneLink} a single \code{integer}
+               \item{ \code{nbLinkOneLinkTested} a single \code{integer}
                corresponding to the number of links of the tested subnetwork
                including all links from the first-degree neighbor nodes.}
-               \item{ \code{nbLink} a single \code{integer}
+               \item{ \code{nbLinkTested} a single \code{integer}
                corresponding to the number of links of the tested subnetwork.}
                \item{ \code{seed} a single \code{numeric} corresponding
                to the seed used for the analysis.}

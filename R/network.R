@@ -33,7 +33,8 @@ network <- function(netFileName, fileType="sif", subNetFileName=NULL) {
             stop(strErr)
         }
     } else {
-        strErr <- paste0("File type ", FileType, " is not supported")
+        strErr <- paste0("File type ", fileType, " is not supported")
+        stop(strErr)
     }
 
     class(network) <- "network"

@@ -7,7 +7,7 @@
 \alias{subnetwork}
 \title{TODO}
 \usage{
-\method{plot}{subnetwork}(x, bins = 30, digits = 4, ...)
+\method{plot}{subnetwork}(x, bins = 30, ...)
 
 \method{print}{subnetwork}(x, digits = 4, ...)
 
@@ -15,9 +15,11 @@ subnetwork(network, nbIter = 10000, nbNodes = NULL, nbLink = NULL,
   nbNodesOneLink = NULL, nbLinkOneLink = NULL, seedV = -1)
 }
 \arguments{
-\item{x}{the output object from \code{subnetwork} function to be plotted}
+\item{x}{the output object from \code{subnetwork} function}
 
 \item{bins}{the number of bins used to generate the histograms}
+
+\item{digits}{the number of digits to use when printing numbers}
 
 \item{network}{an object \code{network} TODO}
 
@@ -31,10 +33,6 @@ TODO.}
 seed used when reproducible results are
 needed. When a value inferior or equal to zero is given, a random integer
 is used. Default: \code{-1}.}
-
-\item{\ldots}{arguments passed to or from other methods}
-
-\item{x}{the output object from \code{subnetwork} function to be printed}
 
 \item{\ldots}{arguments passed to or from other methods}
 }

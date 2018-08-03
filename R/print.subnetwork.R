@@ -1,6 +1,7 @@
 #' @rdname subnetwork
 #' @method print subnetwork
-#' @param x the output object from \code{subnetwork} function to be printed
+#' @param x the output object from \code{subnetwork} function
+#' @param digits the number of digits to use when printing numbers
 #' @param \ldots arguments passed to or from other methods
 #' @export
 print.subnetwork <- function(x, digits=4,...) {

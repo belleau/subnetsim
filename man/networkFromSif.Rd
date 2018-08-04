@@ -36,12 +36,14 @@ the subnetwork is added to the list.
 }
 \examples{
 
+## Access SIF file for global network stored in subnetsim package
 networkFile <- system.file("extdata", "demo_network.sif",
 package="subnetsim")
 
 ## Create a network without the subnetwork information
 demo_network <- subnetsim:::networkFromSif(netFileName = networkFile)
 
+## Access SIF file for subnetwork stored in subnetsim package
 subnetworkFile <- system.file("extdata", "demo_subnetwork.sif",
 package="subnetsim")
 

@@ -1,6 +1,13 @@
+subnetsim : Validating that a specific subnetwork is significantly more connected than randomly selected subnetworks with the same number of nodes
+====================
+
+[![Build Status](https://travis-ci.org/belleau/subnetsim.svg?branch=master)](https://travis-ci.org/belleau/subnetsim)
+[![codecov](https://codecov.io/gh/belleau/subnetsim/branch/master/graph/badge.svg)](https://codecov.io/gh/belleau/subnetsim)
+
+
 # subnetsim #
 
-The **subnetsim** package implements a permutation analysis, based on Monte Carlo sampling, for testing the hypothesis that a selected subnetwork, which is part of a larger network, has more interactions than expected by a stochastic effect. 
+The **subnetsim** package implements a simulation analysis, based on bootstrapping, for testing the hypothesis that a selected subnetwork, which is part of a larger network, has more interactions than expected by randomness. 
 
 
 ## Citing ##

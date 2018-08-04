@@ -1,15 +1,16 @@
 ---
-title: "Validating that a specific subnetwork has significantly more interactions than expected by randomness"
-author:  Pascal Belleau, Astrid Deschênes, Martial Boutchueng-Djidjou and Robert L. Faure
+title: Validating that a specific subnetwork has significantly more interactions than
+  expected by randomness
+author: Pascal Belleau, Astrid Deschênes, Martial Boutchueng-Djidjou and Robert L.
+  Faure
 output:
+  pdf_document:
+    toc: yes
   html_document:
-    toc: true
+    toc: yes
 bibliography: biblio.bibtex
-vignette: >
-  %\VignetteIndexEntry{Validating that a specific subnetwork has significantly more interactions than expected by randomness}
-  %\VignettePackage{subnetsim}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+vignette: |
+  %\VignetteIndexEntry{Validating that a specific subnetwork has significantly more interactions than expected by randomness} %\VignettePackage{subnetsim} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
 ---
 
 ```{r style, echo = FALSE, results = 'asis', warning=FALSE, message=FALSE}
@@ -167,15 +168,47 @@ simulatedSubnetwork
 
 ## 4. Extract information from the simulated subnetwork
 
-TODO
+The subnetwork() function return an object subnetwork containing the information relative to the simulation.
+First, the list the parameters values:
 
+```{r simSubNetValues, warning=FALSE, message=FALSE, collapse=TRUE, cache=TRUE}
+# The number of simulation
+simulatedSubnetwork$nbIter 
+
+# The value of the seed for the simulation.
+simulatedSubnetwork$seed
+
+# The Number of nodes of the subnetwork which corresponded to the number of all the subnetwork simulated.
+simulatedSubnetwork$nbNodes
+
+# The number of links in the subnetwork observed
+simulatedSubnetwork$nbLinkTested
+
+# The number of nodes in the subnetwork observed including all the first-degree neighbor nodes.
+simulatedSubnetwork$nbNodesOneLinkTested
+
+# The number of links in the subnetwork observed including all the links of the first-degree neighbor nodes.
+simulatedSubnetwork$nbLinkOneLinkTested
+
+# And results from the subnetworks simulated:
+
+# A vector of the number of links in each subnetwork simulated.
+simulatedSubnetwork$nbLink
+
+# A vector of the number of nodes in each subnetwork simulated including all the first-degree neighbor nodes.
+simulatedSubnetwork$nbNodesOneLink
+
+# A vector of the number of links in each subnetwork simulated including all the links of the first-degree neighbor nodes.
+simulatedSubnetwork$nbLinkOneLink
+
+```
 
 ## 5. Plot the results
 
 A graph showing the position of the observed values comparing to the simulated results can be easily 
 generated using the *plot()* function.
 
-```{r graphRes, warning=FALSE, message=FALSE, collapse=TRUE, cache=TRUE, fig.align="center"}
+```{r graphRes, warning=FALSE, message=FALSE, collapse=TRUE, cache=TRUE, fig.align="center", fig.cap="Distribution of the simulated measures of connectivity versus the observed values."}
 # Generate a graph for the three measures of connectivity
 plot(simulatedSubnetwork)
 ```

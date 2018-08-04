@@ -1,11 +1,13 @@
-#' @title Subnetwork simulation through randomness sampling
+#' @title Subnetwork simulation analysis through bootstrapping
 #'
-#' @description Simulates a fixed number of subnetwork through randomness sampling.
-#' Each subnetwork is containing the same fixed number of nodes. For all simulated
+#' @description Simulates a fixed number of subnetwork through bootstrapping.
+#' Each subnetwork contains the same fixed number of nodes which correspond to
+#' the number of nodes of the tested subnetwork. For all simulated
 #' subetwork, three important informations are extracted: the number of
 #' nodes present when including the first-degree neighbor nodes, the number
-#' of links and the number of links when includes all links from the first-degree
-#' neighbor nodes.
+#' of links and the number of links when including all links from the first-degree
+#' neighbor nodes. Beware that the function can take some time to process when
+#' the number of iterations is large.
 #'
 #' @param network an object of \code{class} \code{network} that represents
 #' the global network from which the tested subnetwork is extracted. The
@@ -15,7 +17,9 @@
 #' \code{nbLinkOneLink} parameters should all be \code{NULL}. If the
 #' subnetwork is not included, all four parameters should be set.
 #' @param nbIter a single \code{numeric}, interpreted as an \code{integer}
-#' indicating the number of iterations to be run. Default: \code{10000}.
+#' indicating the number of iterations to be run. Beware that the function
+#' can take some time to process when the number of iterations is large.
+#' Default: \code{10000}.
 #' @param nbNodes a single \code{numeric}, interpreted as an \code{integer}
 #' the number of nodes of the tested subnetwork. If the value is \code{NULL},
 #' the value is obtained through the subnetwork present in the network object.
@@ -71,10 +75,24 @@
 #' @keywords subnetwork
 #' @export
 #' @examples
-#' ## TODO
+#'
+#' # Access demo files stored in the subnetsim package
+#' networkFile <- system.file("extdata", "demo_network.sif", package="subnetsim")
+#' subnetworkFile <- system.file("extdata", "demo_subnetwork.sif", package="subnetsim")
+#'
+#' # Load a global network and its tested subnetwork using SIF format files
+#' demo_network_with_sub <- network(netFileName = networkFile,
+#'     subNetFileName = subnetworkFile)
+#'
+#' # Run simulation
+#' simulatedSubnetwork <- subnetwork(network = demo_network_with_sub,
+#'     nbIter = 20, seedV = 313)
+#'
+#' # To see a summary of the content of the "subnetwork" object
+#' simulatedSubnetwork
 #'
 #'
-subnetwork <- function(network, nbIter = 10000, nbNodes=NULL,
+subnetwork <- function(network, nbIter = 1000, nbNodes=NULL,
                        nbLink=NULL, nbNodesOneLink=NULL,
                        nbLinkOneLink=NULL, seedV = -1) {
 

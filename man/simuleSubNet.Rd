@@ -39,7 +39,22 @@ All subnetworks have the same number of nodes.
 }
 \examples{
 
-## TODO
+# Access demo files stored in the subnetsim package
+networkFile <- system.file("extdata", "demo_network.sif", package="subnetsim")
+subnetworkFile <- system.file("extdata", "demo_subnetwork.sif", package="subnetsim")
+
+# Load a global network and its tested subnetwork using SIF format files
+demo_network_with_sub <- network(netFileName = networkFile,
+    subNetFileName = subnetworkFile)
+
+# Run simulation
+simulatedSubnetwork <- subnetsim:::simuleSubNet(netAll = demo_network_with_sub$netAll,
+    nodesAll = demo_network_with_sub$nodesAll,
+    nbIter = 2, nbNodes <- length(demo_network_with_sub$nodesSubNet),
+    seedV = 3122)
+
+# To see a summary of the content of the "subnetwork" object
+simulatedSubnetwork
 
 }
 \author{

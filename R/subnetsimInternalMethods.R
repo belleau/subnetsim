@@ -75,28 +75,6 @@ simuleSubNet <- function(netAll, nodesAll, nbIter, nbNodes, seedV) {
         nodesSub <- nodesSub[order(nodesSub)]
         distSubNet[i, 1:2] <- getOneLink(netAll, nodesAll[nodesSub])
         distSubNet[i, 3] <- getSubNet(netAll, nodesAll[nodesSub])
-        # flag<-1
-        # cpt<-1
-        # while(flag){
-        #     nodesSub <- sample(length(nodesAll), nbNodes, replace = FALSE)
-        #     nodesSub <- nodesSub[order(nodesSub)]
-        #     string_node <- paste(unlist(as.character(nodesSub)), sep="_",
-        #                             collapse = '_')
-        #
-        #
-        #     if (!(has.key(string_node, pastSub))) {
-        #         pastSub[[string_node]] <- 1
-        #         distSubNet[i, 1:2] <- getOneLink(netAll, nodesAll[nodesSub])
-        #         distSubNet[i, 3] <- getSubNet(netAll, nodesAll[nodesSub])
-        #         flag<-0
-        #     } else{
-        #         if( cpt>10 ){
-        #             stop(paste0("We can simulate the number iteration ", nbIter," different subnetwork"))
-        #         }
-        #         cpt <- cpt + 1
-        #         print("Repeat\n")
-        #     }
-        # }
         if(i%%100==1){
             print(paste0(i, " iterations completed"))
         }

@@ -9,8 +9,7 @@ print.subnetwork <- function(x, digits=4,...) {
     pvalueNbLink  <- length(which(x$nbLink>x$nbLinkTested)) / x$nbIter
     pvalueNbLinkOneLink <- length(which(x$nbLinkOneLink>x$nbLinkOneLinkTested)) / x$nbIter
     pvalueNbNodeOneLink <- length(which(x$nbNodesOneLink>x$nbNodesOneLinkTested)) / x$nbIter
-    cat("TODO\n")
-    cat("TODO\n\n")
+    cat("Simulation subnetwork summary\n")
     cat("Iterations:\n")
     print(x$nbIter, ...)
     cat("Seed:\n")

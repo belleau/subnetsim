@@ -50,6 +50,7 @@ Three measures of connectivity are validated:
 * the number of links in the subnetwork including all the links of the first-degree neighbor nodes
 * the number of links in the subnetwork
     
+    
 # SIF Format Input
 
 The Simple interaction file (SIF) format is one of multiple formats that Cytoscape can read.  For the moment, it is the
@@ -79,11 +80,12 @@ Some common relationship types, used in the Systems Biology community, are:
 networkFile <- system.file("extdata", "demo_network.sif", package="subnetsim")
 
 # Read SIF file
-sifData <- read.table(networkFile)
+sifData <- read.table(networkFile, header=FALSE)
 
 # First line of the SIF file
 head(sifData)
 ```
+
 
 # Description of the random sampling of the subnetworks
 
@@ -96,6 +98,7 @@ two identical simulated subnetworks among all simulated subnetworks.
 
 # An analysis step by step
 
+
 ## Loading subnetsim package
 
 As with any R package, the *`r packageDescription("subnetsim")[["Package"]]`* package should 
@@ -104,6 +107,7 @@ first be loaded with the following command:
 ```{r loadingPackage, warning=FALSE, message=FALSE}
 library(subnetsim)
 ```
+
 
 ## Loading the global network and the tested subnetwork
 
@@ -130,6 +134,7 @@ summary(demo_network_with_sub$netAll)
 head(demo_network_with_sub$nodesAll)
 ```
 
+
 ## Generating the simulated subnetwork
 
 A fixed number of simulated subnetworks are generated through the *simuleSubNet()* function.
@@ -149,7 +154,7 @@ simulatedSubnetwork
 
 ## Extract information from the simulated subnetwork
 
-
+TODO
 
 
 ## Plot the results
@@ -161,6 +166,7 @@ generated using the *plot()* function.
 # Generate a graph for the three measures of connectivity
 plot(simulatedSubnetwork)
 ```
+
 
 # Session info
 

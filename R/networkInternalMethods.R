@@ -27,17 +27,19 @@
 #'
 #' @examples
 #'
+#' ## Access SIF file for global network stored in subnetsim package
 #' networkFile <- system.file("extdata", "demo_network.sif",
 #' package="subnetsim")
 #'
 #' ## Create a network without the subnetwork information
-#' demo_network <- networkFromSif(netFileName = networkFile)
+#' demo_network <- subnetsim:::networkFromSif(netFileName = networkFile)
 #'
+#' ## Access SIF file for subnetwork stored in subnetsim package
 #' subnetworkFile <- system.file("extdata", "demo_subnetwork.sif",
 #' package="subnetsim")
 #'
 #' ## Create a network with the subnetwork information
-#' demo_network_with_sub <- networkFromSif(netFileName = networkFile,
+#' demo_network_with_sub <- subnetsim:::networkFromSif(netFileName = networkFile,
 #'     subNetFileName = subnetworkFile)
 #'
 #' @importFrom hash hash has.key

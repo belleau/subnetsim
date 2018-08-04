@@ -6,9 +6,9 @@
 #' @export
 print.subnetwork <- function(x, digits=4,...) {
     # Print title before printing the content of the subnetwork object
-    pvalueNbLink  <- length(which(x$nbLink>=x$nbLinkTested)) / x$nbIter
-    pvalueNbLinkOneLink <- length(which(x$nbLinkOneLink>=x$nbLinkOneLinkTested)) / x$nbIter
-    pvalueNbNodeOneLink <- length(which(x$nbNodesOneLink>=x$nbNodesOneLinkTested)) / x$nbIter
+    pvalueNbLink  <- length(which(x$nbLink>x$nbLinkTested)) / x$nbIter
+    pvalueNbLinkOneLink <- length(which(x$nbLinkOneLink>x$nbLinkOneLinkTested)) / x$nbIter
+    pvalueNbNodeOneLink <- length(which(x$nbNodesOneLink>x$nbNodesOneLinkTested)) / x$nbIter
     cat("TODO\n")
     cat("TODO\n\n")
     cat("Iterations:\n")

@@ -44,11 +44,13 @@ following:
 
 # Introduction
 
-Network science is a cross-disciplinary domain that focuses on the representation, analysis and modeling of complex systems as networks or graphs. Networks are commonly used to study complex systems in many disciplines such as social science, computer science and  life sciences [@Bader].
+Network science is a cross-disciplinary domain that focuses on the representation, analysis and modeling of complex systems as networks or graphs. Networks are commonly used to study complex systems in many disciplines such as social science, computer science and life sciences [@Bader].
 
 A network model is a mathematical model that is designed to represent entities and their relationships in a system. A network is a collection of nodes (or vertices or sites or actors) joined by edges (or links or bonds or ties). Throught the help of modern computers, the structure of complexe and quite large networks can now be more easily generated, visualized and analyzed. Even more, as networks are logically equivalent to graphs, knownledge that can be represented as a set of entities with interactions can be represented as a network.
 
-In computational biology, Cytoscape [@Shannon2003] is a very popular open source software platform for network modeling and visualization. Even though Cytoscape was originally designed for biological research, it is a general platform. 
+In computational biology, Cytoscape [@Shannon2003] is a very popular open source software platform for network modeling and visualization. Even though Cytoscape was originally designed for biological research, it is a general platform. In biology, Cytoscape can be used to identify disease modules which are defined as connected subnetworks showing mechanistic evidence for a specific phenotype. 
+
+In the context of new subnetwork identification, it is of interest to have access to mesaures of connectivity that could validate that the probability that this subnetwork could arise by chance are not significant.
 
 The *`r packageDescription("subnetsim")[["Package"]]`* package uses bootstrapping to test the hypothesis that a specific 
 subnetwork is more connected than randomly generated subnetworks with the same number of nodes. 
@@ -68,7 +70,7 @@ Each simulated sunbetwork contains the exact same number of nodes than the real 
     
 # SIF Format Input
 
-The Simple interaction file (SIF) format is one of multiple formats that Cytoscape can read.  For the moment, it is the
+The Simple interaction file (SIF) format is one of multiple formats that Cytoscape can read. For the moment, it is the
 only format used by the *`r packageDescription("subnetsim")[["Package"]]`* package.
 
 The SIF format only specifies nodes and interactions. This format has the advantage to be easy to 
@@ -120,8 +122,10 @@ library(subnetsim)
 
 ## 2. Loading the global network and the tested subnetwork
 
-The networks must be in a SIF format file. The *network()* function 
-must be used to load the networks.
+The global network must be in a SIF format file. The *network()* function 
+must be used to load the network. The tested subnetwork, when available in 
+SIF format file, can be pass to the *network()* function to be loaded as a 
+subsection of the global network.
 
 ```{r loadNetwork, warning=FALSE, message=FALSE, collapse=TRUE, cache=TRUE}
 # Access demo files stored in the subnetsim package

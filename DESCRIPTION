@@ -1,17 +1,16 @@
 Package: subnetsim
 Type: Package
-Title: Testing if a subnetwork is significantly more connected
-    than randomly selected subnetworks with the same number of nodes
+Title: Validating that a specific subnetwork has significantly more interactions than expected by randomness
 Date: 2018-07-24
 Version: 0.1.0
-Author: Pascal Belleau, Astrid Deschênes 
+Author: Pascal Belleau, Astrid Deschênes, Martial Boutchueng-Djidjou, Robert L. Faure
 Maintainer: Pascal Belleau <pascal_belleau@hotmail.com>
-Description: This package uses random sampling to test the hypothesis that a specific 
-    subnetwork is more connected than randomly selected subnetworks 
+Description: This package uses bootstrapping to test the hypothesis that a specific 
+    subnetwork has more interactions than randomly generated subnetworks 
     with the same number of nodes. Three measures of connectivity are validated: the number of 
-    links starting from the nodes of the subnetwork, the number of nodes plus the number of nodes
-    directly connected to the subnetwork and the number of links from nodes of the subnetwork and 
-    the nodes directly connected to the subnetwork.
+    links starting from the nodes of the subnetwork, the number of nodes in the subnetwork including 
+    all the first-degree neighbor nodes and the number of links in the subnetwork including all the 
+    links of the first-degree neighbor nodes.
 License: Artistic-2.0
 Depends: hash
 Imports: ggplot2, gridExtra, utils

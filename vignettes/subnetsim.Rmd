@@ -98,8 +98,11 @@ two identical simulated subnetworks among all simulated subnetworks.
 
 # An analysis step by step
 
+For this analysis, a gene-gene intraction network containing a subnetwork of interest will be used. The Figure 1 shows both the network and its subnetwork.
 
-## Loading subnetsim package
+![Figure 1. Global network (nodes in blue) with a subnetwork (nodes in yellow) showing gene-gene interactions, generated with Cytoscape.](demo_network.jpg "Global newtork with a subnetwork")
+
+## 1. Loading subnetsim package
 
 As with any R package, the *`r packageDescription("subnetsim")[["Package"]]`* package should 
 first be loaded with the following command:
@@ -109,7 +112,7 @@ library(subnetsim)
 ```
 
 
-## Loading the global network and the tested subnetwork
+## 2. Loading the global network and the tested subnetwork
 
 The networks must be in a SIF format file. The *network()* function 
 must be used to load the networks.
@@ -135,7 +138,7 @@ head(demo_network_with_sub$nodesAll)
 ```
 
 
-## Generating the simulated subnetwork
+## 3. Generating the simulated subnetworks
 
 A fixed number of simulated subnetworks are generated through the *simuleSubNet()* function.
 Random sampling is used to generate subnetworks that have the exact same number of nodes than
@@ -152,12 +155,12 @@ class(simulatedSubnetwork)
 simulatedSubnetwork
 ```
 
-## Extract information from the simulated subnetwork
+## 4. Extract information from the simulated subnetwork
 
 TODO
 
 
-## Plot the results
+## 5. Plot the results
 
 A graph showing the position of the observed values comparing to the simulated results can be easily 
 generated using the *plot()* function.

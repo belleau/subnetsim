@@ -5,12 +5,15 @@ author: Pascal Belleau, Astrid Deschênes, Martial Boutchueng-Djidjou and Robert
   Faure
 output:
   html_document:
-    toc: true
+    toc: yes
+  pdf_document:
+    toc: yes
 bibliography: biblio.bibtex
 vignette: |
-  %\VignetteIndexEntry{Validating that a specific subnetwork has significantly more interactions than expected by randomness}    %\VignettePackage{subnetsim}
-  %\VignetteEngine{knitr::rmarkdown} 
+  %\VignetteIndexEntry{Validating that a specific subnetwork has significantly more interactions than expected by randomness}     
+  %\VignettePackage{subnetsim}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown} 
 ---
 
 ```{r style, echo = FALSE, results = 'asis', warning=FALSE, message=FALSE}
@@ -163,7 +166,8 @@ are used to assess the probability that the tested subnetwork could arise by cha
 
 ```{r simSubNet, warning=FALSE, message=FALSE, collapse=TRUE, cache=TRUE}
 # Run 30 simulations (for a real analysis, the number of iterations should be higher)
-simulatedSubnetwork <- subnetwork(network = demo_network_with_sub, nbIter = 30, seedV = 111111)
+simulatedSubnetwork <- subnetwork(network = demo_network_with_sub, 
+                                      nbIter = 30, seedV = 111111)
 
 # The returned object is an object of class "subnetwork"
 class(simulatedSubnetwork)
@@ -187,16 +191,19 @@ simulatedSubnetwork$nbIter
 # The value of the seed for the simulation.
 simulatedSubnetwork$seed
 
-# The number of nodes of the subnetwork which corresponded to the number of all the subnetwork simulated.
+# The number of nodes of the subnetwork which corresponded to the number 
+# of all the subnetwork simulated.
 simulatedSubnetwork$nbNodes
 
 # The number of links in the subnetwork observed
 simulatedSubnetwork$nbLinkTested
 
-# The number of nodes in the subnetwork observed including all the first-degree neighbor nodes.
+# The number of nodes in the subnetwork observed including all the 
+# first-degree neighbor nodes.
 simulatedSubnetwork$nbNodesOneLinkTested
 
-# The number of links in the subnetwork observed including all the links of the first-degree neighbor nodes.
+# The number of links in the subnetwork observed including all the links 
+# of the first-degree neighbor nodes.
 simulatedSubnetwork$nbLinkOneLinkTested
 
 #####################################################
@@ -206,10 +213,12 @@ simulatedSubnetwork$nbLinkOneLinkTested
 # A vector of the number of links in each subnetwork simulated.
 simulatedSubnetwork$nbLink
 
-# A vector of the number of nodes in each subnetwork simulated including all the first-degree neighbor nodes.
+# A vector of the number of nodes in each subnetwork simulated including 
+# all the first-degree neighbor nodes.
 simulatedSubnetwork$nbNodesOneLink
 
-# A vector of the number of links in each subnetwork simulated including all the links of the first-degree neighbor nodes.
+# A vector of the number of links in each subnetwork simulated including 
+# all the links of the first-degree neighbor nodes.
 simulatedSubnetwork$nbLinkOneLink
 
 ```
@@ -224,6 +233,7 @@ generated using the *plot()* function.
 plot(simulatedSubnetwork)
 ```
 
+\clearpage
 
 # Session info
 

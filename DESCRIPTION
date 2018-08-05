@@ -2,7 +2,7 @@ Package: subnetsim
 Type: Package
 Title: Validating that a specific subnetwork has significantly more interactions than expected by randomness
 Date: 2018-07-24
-Version: 0.1.0
+Version: 0.2.0
 Author: Pascal Belleau, Astrid Deschênes, Martial Boutchueng-Djidjou, Robert L. Faure
 Maintainer: Pascal Belleau <pascal_belleau@hotmail.com>
 Description: This package uses bootstrapping to test the hypothesis that a specific 

@@ -8,7 +8,9 @@ output:
     toc: true
 bibliography: biblio.bibtex
 vignette: |
-  %\VignetteIndexEntry{Validating that a specific subnetwork has significantly more interactions than expected by randomness} %\VignettePackage{subnetsim} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{Validating that a specific subnetwork has significantly more interactions than expected by randomness}    %\VignettePackage{subnetsim}
+  %\VignetteEngine{knitr::rmarkdown} 
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r style, echo = FALSE, results = 'asis', warning=FALSE, message=FALSE}

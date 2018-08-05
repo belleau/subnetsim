@@ -6,8 +6,6 @@ author: Pascal Belleau, Astrid Deschênes, Martial Boutchueng-Djidjou and Robert
 output:
   html_document:
     toc: yes
-  pdf_document:
-    toc: yes
 bibliography: biblio.bibtex
 vignette: |
   %\VignetteIndexEntry{Validating that a specific subnetwork has significantly more interactions than expected by randomness} %\VignettePackage{subnetsim} %\VignetteEngine{knitr::rmarkdown} %\VignetteEncoding{UTF-8}

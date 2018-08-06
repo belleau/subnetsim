@@ -12,7 +12,7 @@ plot.subnetwork <- function(x, bins=30, ...) {
 
     graphTEMP <- ggplot(data, aes(x=nbNodesOneLink)) +
         geom_histogram(colour = "black",fill = c("black"), bins=bins) +
-        xlab("Number of nodes of the networks including first degree neighbors") + ylab("Count") +
+        xlab("Number of nodes of the networks including first-degree neighbors") + ylab("Count") +
         geom_vline(aes(xintercept = x$nbNodesOneLinkTested, color = "observed"),
                    linetype="longdash", size = 1.2, show.legend=TRUE) +
         scale_color_manual(name = "", values = c(observed = "red")) +
@@ -20,7 +20,7 @@ plot.subnetwork <- function(x, bins=30, ...) {
 
     graph01 <- ggplot(data, aes(x=nbNodesOneLink)) +
         geom_histogram(colour = "black",fill = c("black"), bins=bins) +
-        xlab("Number of nodes of the networks including first degree neighbors") + ylab("Count") +
+        xlab("Number of nodes of the networks including first-degree neighbors") + ylab("Count") +
         geom_vline(aes(xintercept = x$nbNodesOneLinkTested, color = "observed"),
                    linetype="longdash", size = 1.2, show.legend=FALSE) +
         scale_color_manual(name = "", values = c(observed = "red")) +

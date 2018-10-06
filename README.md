@@ -24,7 +24,7 @@ If you use this package for a publication, we would ask you to cite the followin
 
 [Pascal Belleau](http://ca.linkedin.com/in/pascalbelleau "Pascal Belleau"),
 [Astrid Desch&ecirc;nes](http://ca.linkedin.com/in/astriddeschenes "Astrid Desch&ecirc;nes"),
-[Martial Boutchueng-Djidjou](https://www.researchgate.net/profile/Boutchueng_Djidjou_M),
+[Martial Boutchueng-Djidjou](https://www.researchgate.net/profile/Boutchueng_Djidjou_M) and
 [Robert L. Faure](http://www.crchudequebec.ulaval.ca/en/research/researchers/robert-l-faure/)
 
 ## License ##

@@ -17,7 +17,9 @@ The R **subnetsim** package also offers the possibility to easily graph the resu
 
 If you use this package for a publication, we would ask you to cite the following:
 
-> Martial Boutchueng-Djidjou, Pascal Belleau, Nicolas Bilodeau, Suzanne Fortier, Sylvie Bourassa, Arnaud Droit, Sabine Elowe, Robert L. Faure. 2018. A type 2 diabetes disease module with a high collective influence for Cdk2 and PTPLAD1 is localized in endosomes. bioRxiv doi: 10.1101/341693
+> Belleau P, Deschênes A, Boutchueng-Djidjou M et Faure R L. Validating that a specific subnetwork has significantly more interactions than expected by randomness. protocols.io. DOI: 10.17504/protocols.io.sdqea5w,  https://dx.doi.org/10.17504/protocols.io.sdqea5w
+
+> Boutchueng-Djidjou M, Belleau P, Bilodeau N, Fortier S, Bourassa S, Droit A, Elowe S, et Faure R L. (2018) A type 2 diabetes disease module with a high collective influence for Cdk2 and PTPLAD1 is localized in endosomes. PLoS ONE 13(10): e0205180. DOI: 10.1371/journal.pone.0205180,  https://doi.org/10.1371/journal.pone.0205180
 
 
 ## Authors ##

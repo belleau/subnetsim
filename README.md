@@ -31,7 +31,7 @@ If you use this package for a publication, we would ask you to cite the followin
 
 ## License ##
 
-This package and the underlying subnetsim code are distributed under 
+This package and the underlying **subnetsim** code are distributed under 
 the Artistic license 2.0. You are free to use and redistribute this software. 
 
 For more information on Artistic 2.0 License see
